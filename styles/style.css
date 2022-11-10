@@ -1,0 +1,122 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  /* background-color: rgba(214, 207, 196, 0.1); */
+  overflow: hidden;
+  cursor:none;
+  /* background-image: url(./nightSky.png); */
+  background-repeat: repeat;
+}
+
+.background{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.background img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle{
+  border-radius: 50%;
+  height: 900px;
+  width: 900px;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* background-color: rgba(121, 51, 195, 0.7); */
+  /* background-color: rgba(95, 95, 201, 0.7); */
+  box-shadow: 0 0 51px 2000px black, 0 0 190px 375px black inset;
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+#circularcursor {
+  background-color: rgba(121, 51, 195, 0.1);
+  background-color: rgba(212, 200, 224, 0.1);
+  background-color: transparent;
+  border: 2px solid rgba(255,255,255,0.1);
+  /* border:1px solid black;     */
+  height:32px;
+  width:32px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.showBorder{
+  left: -2px;
+  top: -2px;
+  height: 896px;
+  width: 896px;
+  border: solid black 4px;
+  border-radius: 50% ;   
+  position: relative;
+}
+
+.svg-container{
+  width: 33%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* border: 1px solid red; */
+  z-index: 100;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.svg-scene{
+  z-index: 100;
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+}
+.obs-container{
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  z-index: 90;
+}
+
+.svg-mars{
+  position: absolute;
+  top: 100px;
+  right: 150px;
+  z-index: 1;
+  transition: all 2s;
+  width: 30px;
+  height: 30px;
+  /* transform-origin: 50% 50%; */
+  /* border: 1px solid red; */
+}
+.svg-mars:hover {
+  transform: scale(3);
+  z-index: 100;
+  transition-delay:0.3s;
+
+}
+.astrodex{
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  z-index: 100;
+  cursor: pointer;
+}
+.astrodex-modal{
+  width: 70%;
+  height: 70%;
+  display: none;
+  position: absolute;
+  top: calc(50% - 35%) ;
+  left: calc(50% - 35%);
+  z-index: 100;
+}
