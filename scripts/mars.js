@@ -1,4 +1,4 @@
-const url = '/static/data-mars.json'
+const url = '/static/mars/data-mars.json'
 let marsDataJson = await fetch(url)
   .then(function (response) {
     return response.json()
@@ -10,23 +10,11 @@ let marsDataJson = await fetch(url)
     console.log(err);
   });
   
-  let mainContainer = document.getElementById("myData")
+  const mainContainer = document.getElementById("myData")
 
-  appendData('mars_diameter')
-  appendData('earth_diameter')
-  appendData('mars_mass')
-  appendData('earth_mass')
-  appendData('mass_comparison')
-  appendData('flight_duration')
-  appendData('mars_rotat')
-  appendData('earth_rotat')
-  appendData('phobos')
-  appendData('deimos')
-  appendData('moon')
-  appendData('temp_min')
-  appendData('temp_moy')
-  appendData('temp_max')
-
+  for(const data in marsDataJson){
+    appendData(data)
+  }
 
   function appendData(data) {
     let value = marsDataJson[data].value
@@ -46,15 +34,24 @@ let marsDataJson = await fetch(url)
     div.style.color = color
     div.innerHTML = `<svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg"><text x="10" y="50" fill="${color}">` + value + '</text></svg>'
     div.innerHTML = `${value}`
+    console.log(div.offsetWidth)
     mainContainer.appendChild(div)
+    // div.style.left = "calc(x - (div.offsetWidth / 2)px)"
+    // div.style.top = "calc(y - (div.offsetHeight / 2)px)"
   }
 
   // import Scrollbar from 'smooth-scrollbar';
   let scrollbar;
   let lottieProgress;
   let previousPercentage = 0;
+  
+  let dataObj = {}
+  for(const data in marsDataJson){
+    dataObj[`${data}`] = document.querySelector(`.${data}`)
+  }
+  console.log('dataObj', dataObj)
 
-  const marsDiameter = document.querySelector(".mars_diameter");
+  // const marsDiameter = document.querySelector(".mars_diameter");
   const earthDiameter = document.querySelector(".earth_diameter");
   const marsMass = document.querySelector(".mars_mass");
   const earthMass = document.querySelector(".earth_mass");
@@ -68,6 +65,9 @@ let marsDataJson = await fetch(url)
   const tempMin = document.querySelector(".temp_min");
   const tempMoy = document.querySelector(".temp_moy");
   const tempMax = document.querySelector(".temp_max");
+  const nbRovers = document.querySelector(".nb_rovers");
+  const marsYearRotat = document.querySelector(".mars_year_rotat");
+  const earthYearRotat = document.querySelector(".earth_year_rotat");
 
   const launchAnim = (path, callback) => {
     scrollbar = Scrollbar.init(document.querySelector(".container"), {
@@ -81,11 +81,16 @@ let marsDataJson = await fetch(url)
       path: path
     });
     scrollbar.addListener(callback);
-    scrollbar.scrollTo(0, 110, 3000);
+    scrollbar.scrollTo(0, 110, 2500);
+    console.log('lottieProgress.markers', lottieProgress)
+    // scrollbar.setPosition(0, 110);
+    // scrollbar.update()
   }
 
   const marsCallback = () => {
-    console.log(lottieProgress)
+    // console.log(lottieProgress)
+    
+    // console.log('lottieProgress.markers', lottieProgress.markers)
     let totalHeight = scrollbar.limit.y;
     let scrollFromTop = scrollbar.scrollTop;
     let totalFrames = lottieProgress.totalFrames;
@@ -94,8 +99,8 @@ let marsDataJson = await fetch(url)
     let scrollPercentage = (scrollFromTop * 100) / totalHeight;
     let scrollPercentRounded = Math.round(scrollPercentage);
     // console.log(scrollPercentRounded);
+    // console.log(Math.round(lottieProgress.currentFrame))
 
-    console.log(Math.round(lottieProgress.currentFrame))
     
     let delta = previousPercentage - scrollPercentage;
     
@@ -105,54 +110,72 @@ let marsDataJson = await fetch(url)
     
     // marsDiameter & earthDiameter
     if(scrollPercentRounded > 12 && scrollPercentRounded < 16) {
-      show(marsDiameter)
-      show(earthDiameter)
+      show(dataObj.mars_diameter)
+      show(dataObj.earth_diameter)
     }else{
-      hide(marsDiameter)
-      hide(earthDiameter)
+      hide(dataObj.mars_diameter)
+      hide(dataObj.earth_diameter)
     }
 
     //mars and earth mass
     if(scrollPercentRounded >= 20  && scrollPercentRounded < 24) {
-      show(marsMass)
-      show(earthMass)
-      show(massComparison)
+      show(dataObj.mars_mass)
+      show(dataObj.earth_mass)
+      show(dataObj.mass_comparison)
     }else{
-      hide(marsMass)
-      hide(earthMass)
-      hide(massComparison)
+      hide(dataObj.mars_mass)
+      hide(dataObj.earth_mass)
+      hide(dataObj.mass_comparison)
     }
 
     //flight duration
     if(scrollPercentRounded >= 25 && scrollPercentRounded < 30) {
-      show(flightDuration)
+      show(dataObj.flight_duration)
     }else{
-      hide(flightDuration)
+      hide(dataObj.flight_duration)
     }
+    //rotation
     if(scrollPercentRounded >= 30 && scrollPercentRounded < 35) {
-      show(marsRotat)
-      show(earthRotat)
+      show(dataObj.mars_rotat)
+      show(dataObj.earth_rotat)
     }else{
-      hide(marsRotat)
-      hide(earthRotat)
+      hide(dataObj.mars_rotat)
+      hide(dataObj.earth_rotat)
     }
+    
+    //moons
     if(scrollPercentRounded >= 36 && scrollPercentRounded < 41) {
-      show(phobos)
-      show(deimos)
-      show(moon)
+      show(dataObj.phobos)
+      show(dataObj.deimos)
+      show(dataObj.moon)
     }else{
-      hide(phobos)
-      hide(deimos)
-      hide(moon)
+      hide(dataObj.phobos)
+      hide(dataObj.deimos)
+      hide(dataObj.moon)
     }
-    if(scrollPercentRounded >= 83 && scrollPercentRounded < 88 ) {
-      show(tempMin)
-      show(tempMoy)
-      show(tempMax)
+    //earth rotation
+    if(scrollPercentRounded >= 52 && scrollPercentRounded < 65) {
+      show(dataObj.mars_year_rotat)
+      show(dataObj.earth_year_rotat)
     }else{
-      hide(tempMin)
-      hide(tempMoy)
-      hide(tempMax)
+      hide(dataObj.mars_year_rotat)
+      hide(dataObj.earth_year_rotat)
+    }
+    //temp
+    if(scrollPercentRounded >= 83 && scrollPercentRounded < 88 ) {
+      show(dataObj.temp_moy)
+      show(dataObj.temp_max)
+      show(dataObj.temp_min)
+    }else{
+      hide(dataObj.temp_moy)
+      hide(dataObj.temp_max)
+      hide(dataObj.temp_min)
+    }
+    //rovers
+    if(scrollPercentRounded >= 89 && scrollPercentRounded < 95 ) {
+      show(dataObj.nb_rovers)
+    }else{
+      hide(dataObj.nb_rovers)
     }
 
     
@@ -169,13 +192,13 @@ let marsDataJson = await fetch(url)
       lottieProgress = null;
       
       previousPercentage = 0;
-      launchAnim( "./static/mars-v2.json", marsCallback);
+      launchAnim( "./static/mars/mars-v4.json", marsCallback);
     }
 
     previousPercentage = scrollPercentage;
   }
   
-  launchAnim("./static/mars-v3.json", marsCallback)
+  launchAnim("./static/mars/mars-v4.json", marsCallback)
 
   // path: "https://lottie.host/799a8060-05aa-47df-8669-752bbe5687f3/BzD72DF9mt.json"
   //path: "https://lottie.host/937bcaeb-8960-4822-b1b7-8b45be4872aa/WThntv3Pm5.json"
