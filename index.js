@@ -4,29 +4,30 @@ const circularcursor=document.querySelector("#circularcursor");
 window.addEventListener("mousemove", e => {
     circle.style.top = `${e.clientY-450}px`;
     circle.style.left = `${e.clientX-450}px`;
-    circularcursor.style.top = `${e.clientY-16}px`;
+    circularcursor.style.top = `${e.clientY+16}px`;
     circularcursor.style.left = `${e.clientX-16}px`;
 })
 
 // observatoire
-// let eyeBall = document.querySelector(".eyeball"),
-//     pupil = document.querySelector(".pupil"),
-    // eyeArea = eyeBall.getBoundingClientRect(),
-    // pupilArea = pupil.getBoundingClientRect(),
-    // R = eyeArea.width/2,
-    // r = pupilArea.width/2,
-    // centerX = eyeArea.left + R,
-    // centerY = eyeArea.top + R;
+let eyeBall = document.querySelector(".gyalya"),
+    pupil = document.querySelector(".pupil"),
+    eyeArea = eyeBall.getBoundingClientRect(),
+    pupilArea = pupil.getBoundingClientRect(),
+    R = eyeArea.width/2,
+    r = pupilArea.width/3,
+    centerX = eyeArea.left + R,
+    centerY = eyeArea.top + R;
+    console.log(eyeArea.left, eyeArea.top, centerX, centerY)
 
-// document.addEventListener("mousemove", (e)=>{
-//   let x = e.clientX - centerX,
-//       y = e.clientY - centerY,
-//       theta = Math.atan2(y,x),
-//       angle = theta*180/Math.PI + 90;
+document.addEventListener("mousemove", (e)=>{
+  let x = e.clientX - centerX,
+      y = e.clientY - centerY,
+      theta = Math.atan2(y,x),
+      angle = theta*180/Math.PI + 30;
   
-//   pupil.style.transform = `translateX(${R - r +"px"}) rotate(${angle + "deg"})`;
-//   pupil.style.transformOrigin = `${r +"px"} center`;
-// });
+  pupil.style.transform = `translateX(${R - r +"px"}) rotate(${angle + "deg"})`;
+  pupil.style.transformOrigin = `${r +"px"} center`;
+});
 
 const astrodex = document.querySelector(".astrodex");
 const astrodexModal = document.querySelector(".astrodex-modal");
