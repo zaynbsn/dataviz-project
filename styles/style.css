@@ -68,7 +68,6 @@ body{
   position: absolute;
   left: 0;
   top: 0;
-  /* border: 1px solid red; */
   z-index: 100;
   display: flex;
   align-items: end;
@@ -80,6 +79,10 @@ body{
   position: absolute;
   bottom: -30px;
 }
+.svg-scene img{
+  width: 100%;
+}
+
 .obs-container{
   position: absolute;
   top: calc(50% - 100px);
