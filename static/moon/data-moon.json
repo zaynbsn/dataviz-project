@@ -1,0 +1,11 @@
+{
+  "moon_diameter": {"value": "3 475km", "x": "65%", "y": "64%", "size": "2.25vw", "color": "white", "rotate": true}, 
+  "earth_diameter": {"value": "12 742km", "x": "20%", "y": "42%", "size": "3.9375vw", "color": "white", "rotate": true}, 
+  "dist_earth_moon": {"value": "400 000km", "x": "62%", "y": "53%", "size": "2.25vw", "color": "black"}, 
+  "nb_rocket": {"value": " fusées", "x": "21%", "y": "68%", "size": "2.25vw", "color": "black"},
+  "first_step_dates" : {"value": "20 juillet 1969", "x": "61%", "y": "20%", "size": "2.25vw", "color": "white"},
+  "moon_gravity" : {"value": "0.166g", "x": "47%", "y": "40%", "size": "1.6875vw", "color": "white"},
+  "earth_gravity": {"value": "1g", "x": "66%", "y": "46%", "size": "1.6875vw", "color": "white"},
+  "periodic_cycle": {"value": "28 jours", "x": "22%", "y": "46%", "size": "2.25vw", "color": "white"},
+  "moon_base": {"value": "Objectif base lunaire", "x": "83%", "y": "23%", "size": "1.6875vw", "color": "white"}
+}
