@@ -2,7 +2,7 @@
   "mars" : "Mars",
   "diameter" : "Diamètre",
   "mass" : "Poids",
-  "plane" : "Temps de trajet",
+  "timeTravel" : "Temps de trajet",
   "rotation" : "Rotation",
   "moon" : "Lunes",
   "solar" : "Orbite solaire",
