@@ -46,6 +46,10 @@ body::-webkit-scrollbar {
   src:  url('/fonts/ABCGravity-XCompressed-Trial.woff2') format('woff2'),
         url('/fonts/ABCGravity-XCompressed-Trial.woff') format('woff');
 }
+@font-face {
+  font-family: 'minecraft';
+  src: url('/fonts/enchanting-table/EnchantingTable-Regular.woff') format('woff');
+}
 
 
 canvas{
@@ -60,7 +64,8 @@ canvas{
 .data{
   width: fit-content;
   height: fit-content;
-  text-align: center;
+  max-width: 250px;
+  text-align: left;
   color: rgb(255, 255, 255);
   z-index: 2;
   /* font-family: 'Gravity-Extanded';
@@ -68,10 +73,12 @@ canvas{
   font-family: 'Gravity-Expanded';
   font-family: 'Gravity-Compressed'; */
   font-family: 'Gravity-Condensed';
+  /* font-family: 'minecraft'; */
   position: fixed;
   font-weight: bold;
   opacity: 0;
   transition: 0.3s;
+  border: 1px solid transparent;
 }
 .navbar{
   display: flex;
@@ -92,27 +99,30 @@ canvas{
   align-items: center;
   width: 100%;
   height: fit-content;
-  color: rgba(255,255,255, 0.3);
+  color: rgba(236, 233, 255, 0);
   font-family: 'Gravity-Condensed';
   cursor: pointer;
   transition: 0.3s;
   /* border: 1px solid green; */
 }
 .navbar-item:hover{
-  color: white;
+  color: rgba(236, 233, 255, 0.3);
   transition: 0.3s;
 }
-.is-active{
-  color: white;
+.is-active, .is-active:hover{
+  color: rgba(236, 233, 255, 1);
 }
 .navbar-icons{
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   /* border: 1px solid red; */
 }
 .navbar-icons img{
   width: 100%;
   height: auto;
+}
+.navbar-icons img:hover{
+  color: red; 
 }
 .rotate45{
   transform: rotate(-45deg);
