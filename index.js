@@ -4,7 +4,7 @@ const circularcursor=document.querySelector("#circularcursor");
 window.addEventListener("mousemove", e => {
     circle.style.top = `${e.clientY-450}px`;
     circle.style.left = `${e.clientX-450}px`;
-    circularcursor.style.top = `${e.clientY+16}px`;
+    circularcursor.style.top = `${e.clientY-16}px`;
     circularcursor.style.left = `${e.clientX-16}px`;
 })
 
