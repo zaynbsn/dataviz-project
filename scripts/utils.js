@@ -41,6 +41,14 @@ const selectAllDataDivs = (marsDataJson) => {
   return dataObj
 }
 
+const changeNavBarActive = (currentFrame, markers, index, navbarItems) => {
+  if(currentFrame >= markers[index].time-50 && currentFrame <= (markers[index+1].time -50)){
+    let currentActive = document.querySelector(".is-active");
+    currentActive.classList.remove("is-active")
+    navbarItems[index].classList.add("is-active");
+  }
+}
+
 function show(div){
   div.classList.add('is-visible')
 }
@@ -55,4 +63,4 @@ function removeClass(div, _class){
 }
 
 
-export { getDataJson, appendData, selectAllDataDivs, show, hide }
+export { getDataJson, appendData, selectAllDataDivs, changeNavBarActive, show, hide }
