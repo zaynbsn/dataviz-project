@@ -1,11 +1,39 @@
 {
-  "moon_diameter": {"value": "3 475km", "x": "65%", "y": "64%", "size": "2.25vw", "color": "white", "rotate": true}, 
-  "earth_diameter": {"value": "12 742km", "x": "20%", "y": "42%", "size": "3.9375vw", "color": "white", "rotate": true}, 
-  "dist_earth_moon": {"value": "400 000km", "x": "62%", "y": "53%", "size": "2.25vw", "color": "black"}, 
-  "nb_rocket": {"value": " fusées", "x": "21%", "y": "68%", "size": "2.25vw", "color": "black"},
-  "first_step_dates" : {"value": "20 juillet 1969", "x": "61%", "y": "20%", "size": "2.25vw", "color": "white"},
-  "moon_gravity" : {"value": "0.166g", "x": "47%", "y": "40%", "size": "1.6875vw", "color": "white"},
-  "earth_gravity": {"value": "1g", "x": "66%", "y": "46%", "size": "1.6875vw", "color": "white"},
-  "periodic_cycle": {"value": "28 jours", "x": "22%", "y": "46%", "size": "2.25vw", "color": "white"},
-  "moon_base": {"value": "Objectif base lunaire", "x": "83%", "y": "23%", "size": "1.6875vw", "color": "white"}
+  "moon_intro_text": {"value": "La Lune satellite naturel de la Terre. ", "x": "40%", "y": "40%", "size": "2.25vw", "color": "black"}, 
+  "moon_diameter": {"value": "3 475km", "x": "71%", "y": "46%", "size": "2vw", "color": "black", "rotate": true}, 
+  "earth_diameter": {"value": "12 742km", "x": "24%", "y": "42%", "size": "3.9375vw", "color": "white", "rotate": true}, 
+  "diameter_text":{ "value": "Elle est environ 3 fois plus petite que la Terre.",
+                    "x": "60%", "y": "20%", "size": "1.5vw", "color": "white"
+                  }, 
+  
+  "dist_earth_moon": {"value": "400 000km", "x": "45%", "y": "43%", "size": "2.25vw", "color": "white"}, 
+  "dist_compare_moon": {"value": "soit 400x la longueur de la France", "x": "41%", "y": "52%", "size": "1.2vw", "color": "white"}, 
+  "dist_text":{"value": "Elle est située à plus de 400 000 kilomètres au dessus de nos têtes. Cette distance est tellement grande que l’ensemble des planètes du système solaire pourrait être comprises entre nous et la Lune.",
+                "x": "37%", "y": "10%", "size": "1.2vw", "color": "white"
+              }, 
+
+  "first_step_dates" : {"value": "1969", "x": "83%", "y": "47%", "size": "2.25vw", "color": "black"},
+  "first_step_text" : {"value": "La première fois que l’Homme a posé le pied sur la Lune était en 1969 !",
+                      "x": "47%", "y": "35%", "size": "1.2vw", "color": "white"
+                    },
+  "missions_text" : {"value": "Il y a eu au total 6 missions réussis qui ont permis à l’Homme d’explorer la Lune. ",
+                      "x": "47%", "y": "35%", "size": "1.2vw", "color": "white"
+                    },
+
+  "moon_gravity" : {"value": "0.166g", "x": "74%", "y": "84%", "size": "2.25vw", "color": "black"},
+  "earth_gravity": {"value": "1g", "x": "34%", "y": "72%", "size": "2.25vw", "color": "white"},
+  "gravity_text" :{ "value": "La gravité de la Lune est 6 fois plus faible que celle de la Terre ce qui permet aux astronautes de sauter plus haut et de redescendre plus lentement.",
+                    "x": "47%", "y": "40%", "size": "1.3vw", "color": "white"
+                  },
+
+  "periodic_cycle": {"value": "28 jours", "x": "62%", "y": "46%", "size": "2.25vw", "color": "white"},
+  "cycle_text_1": { "value": "La Lune met <mark style='background: red;'>28 jours</mark> pour faire un tour sur elle même.",
+                  "x": "40.5%", "y": "45%", "size": "1.5vw", "color": "white"
+                },
+  "cycle_text_2": { "value": "Et elle met également <mark style='background: cyan;'>28 jours</mark> pour effectuer le tour de la Terre.",
+                  "x": "40.5%", "y": "45%", "size": "1.5vw", "color": "white"
+                },
+  "cycle_text_3": { "value": "Ainsi, la Lune expose tout le temps la même face d’elle même à la Terre. La face caché de la Lune existe réellement !",
+                  "x": "40.5%", "y": "45%", "size": "1.2vw", "color": "white"
+                }
 }
