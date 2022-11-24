@@ -11,17 +11,31 @@ const getDataJson = async (url) => {
   });
 }
 
-const appendData = (data, marsDataJson, mainContainer) => {
-  let value = marsDataJson[data].value
-  let x = marsDataJson[data].x
-  let y = marsDataJson[data].y
-  let size = marsDataJson[data].size
-  let color = marsDataJson[data].color
+const appendNavbar = (item, dataJson, navContainer) => {
+  let div = document.createElement("div")
+  div.classList.add("navbar-item")
+  div.classList.add(item)
+  if (item === 'mars') div.classList.add('is-active')
+  div.innerHTML =  `<div class="navbar-icons">
+                      <img src="./static/icons/${item}.svg"/>
+                    </div>
+                    <div>
+                      <p>${dataJson[item]}</p>
+                    </div>`
+  navContainer.appendChild(div)
+}
+
+const appendData = (data, dataJson, mainContainer) => {
+  let value = dataJson[data].value
+  let x = dataJson[data].x
+  let y = dataJson[data].y
+  let size = dataJson[data].size
+  let color = dataJson[data].color
   
   let div = document.createElement("div")
   div.classList.add("data")
   div.classList.add(data)
-  marsDataJson[data]['rotate'] ? div.classList.add('rotate45') : ''
+  dataJson[data]['rotate'] ? div.classList.add('rotate45') : ''
   div.style.left = x
   div.style.top = y
   div.style.fontSize = size
@@ -33,20 +47,27 @@ const appendData = (data, marsDataJson, mainContainer) => {
   // div.style.top = "calc(y - (div.offsetHeight / 2)px)"
 }
 
-const selectAllDataDivs = (marsDataJson) => {
+const selectAllDataDivs = (dataJson) => {
   let dataObj = {}
-  for(const data in marsDataJson){
+  for(const data in dataJson){
     dataObj[`${data}`] = document.querySelector(`.${data}`)
   }
   return dataObj
 }
 
 const changeNavBarActive = (currentFrame, markers, index, navbarItems) => {
-  if(currentFrame >= markers[index].time-50 && currentFrame <= (markers[index+1].time -50)){
+  if(markers[index+1]){
+    if(currentFrame >= markers[index].time-50 && currentFrame <= (markers[index+1].time -50)){
+      let currentActive = document.querySelector(".is-active");
+      currentActive.classList.remove("is-active")
+      navbarItems[index].classList.add("is-active");
+    }
+  }else if(currentFrame >= markers[index].time-50){
     let currentActive = document.querySelector(".is-active");
-    currentActive.classList.remove("is-active")
-    navbarItems[index].classList.add("is-active");
+      currentActive.classList.remove("is-active")
+      navbarItems[index].classList.add("is-active");
   }
+  
 }
 
 function show(div){
@@ -63,4 +84,4 @@ function removeClass(div, _class){
 }
 
 
-export { getDataJson, appendData, selectAllDataDivs, changeNavBarActive, show, hide }
+export { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide }
