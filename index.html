@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Astrodex</title>
-  <link rel="icon" type="image/x-icon" href="./static/Mars.svg">
-  <link rel="stylesheet" href="styles/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Astrodex</title>
+    <link rel="icon" type="image/x-icon" href="./static/Mars.svg">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+  </head>
 
-<body>
-  <div class="background">
-    <img src="./static/nightSky.svg"/>
-  </div>
-  <div id="circularcursor"></div>
-  <div class="svg-container">
-    <div class="svg-scene">
-      <img src="./static/maisonV2.svg"/>
-      <div class="gyalya">
-        <img class="pupil" src="./static/lunetteAstronomique.svg"/>
+  <body>
+    <div class="background">
+      <img src="./static/nightSky.svg"/>
+    </div>
+    <div id="circularcursor"></div>
+    <div class="svg-container">
+      <div class="svg-scene">
+        <img src="./static/maisonV2.svg"/>
+        <div class="gyalya">
+          <img class="pupil" src="./static/lunetteAstronomique.svg"/>
+        </div>
       </div>
     </div>
-  </div>
-  
+    
 
-  <a href="/mars.html">
-    <img src="./static/Mars.svg" class="svg-mars" />
-    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player class="svg-mars" src="https://assets2.lottiefiles.com/private_files/lf30_whmmdqnm.json"  background="transparent"  speed="1"  style="width: 30px; height: 30px;"  loop  autoplay></lottie-player> -->
-  </a>
-  
-  <div>
-    <svg width="100" height="100" class="astrodex">
-      <rect cx="100" cy="100" width="100" height="200" fill="white"/>
-    </svg>
-  </div>
+    <a href="/mars.html">
+      <img src="./static/Mars.svg" class="svg-mars" />
+    </a>
+    <a href="/moon.html">
+      <img src="./static/Moon.svg" class="svg-moon" />
+    </a>
 
-  <div>
-    <svg width="100" height="100" class="astrodex-modal">
-      <rect cx="100" cy="100" width="100%" height="100%" fill="white"/>
-    </svg>
-  </div>
+    <div class="astrodex">
+      <img src="./static/closed-astrodex.svg"/>
+    </div>
 
-  <div id="night" class="circle"><div id="borderCircle" class="showBorder"></div></div>
-  <script src="index.js"></script>
-</body>
+    <div class="astrodex-modal">
+      <div class="astrodex-content">
+        <div class="presentation">
+          <div class="title"><h1>Astrodex</h1></div>
+          <div class="text">
+            <p>Observe le ciel pour découvrir un objet spatial ou une planète.</p><br/>
+            <p>Une fois trouvé, récolte ses données afin de compléter l’Astrodex.</p>
+          </div>
+        </div>
+
+        <div class="experiences"></div>
+      </div>
+    </div>
+
+    <div id="night" class="circle"><div id="borderCircle" class="showBorder"></div></div>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
