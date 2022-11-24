@@ -1,4 +1,4 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide } from './utils.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide, showAndHide } from './utils.js'
 
 let marsNavData = await getDataJson('/static/mars/nav-mars.json')
 const navContainer = document.querySelector(".navbar")
@@ -45,7 +45,6 @@ const launchAnim = async (path, callback) => {
 
   lottieProgress.addEventListener('data_ready', ()  => {
     console.log(lottieProgress)
-    console.log(scrollbar.size)
     for (const marker of lottieProgress.markers){
       allMarkersPositions.push(marker.time * 5)
     }
@@ -93,103 +92,34 @@ const marsCallback = () => {
     changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
     }
   }
-
-  if(scrollPercentRounded > 4 && scrollPercentRounded <= 8) {
-    show(dataObj.mars_intro_text)
-  }else{
-    hide(dataObj.mars_intro_text)
-  }
   
-  // marsDiameter & earthDiameter
-  if(scrollPercentRounded > 11 && scrollPercentRounded < 15) {
-    show(dataObj.mars_diameter)
-    show(dataObj.earth_diameter)
-    show(dataObj.diameter_text)
-  }else{
-    hide(dataObj.mars_diameter)
-    hide(dataObj.earth_diameter)
-    hide(dataObj.diameter_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["mars_intro_text"], 4, 8)
 
-
+  // mars diameter
+  showAndHide(dataObj, scrollPercentRounded, ["mars_diameter", "earth_diameter", "diameter_text"], 11, 15)
   
   //mars and earth mass
-  if(scrollPercentRounded >= 18  && scrollPercentRounded < 23) {
-    show(dataObj.mars_mass)
-    show(dataObj.earth_mass)
-    show(dataObj.mass_text)
-  }else{
-    hide(dataObj.mars_mass)
-    hide(dataObj.earth_mass)
-    hide(dataObj.mass_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["mars_mass", "earth_mass", "mass_text"], 18, 23)
   
   //flight duration
-  if(scrollPercentRounded >= 31 && scrollPercentRounded < 35) {
-    show(dataObj.flight_duration)
-    show(dataObj.duration_text)
-  }else{
-    hide(dataObj.flight_duration)
-    hide(dataObj.duration_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["flight_duration", "duration_text"], 31, 35)
+  
   //rotation
-  if(scrollPercentRounded >= 35 && scrollPercentRounded < 40) {
-    show(dataObj.mars_rotat)
-    show(dataObj.earth_rotat)
-    show(dataObj.rotation_text)
-  }else{
-    hide(dataObj.mars_rotat)
-    hide(dataObj.earth_rotat)
-    hide(dataObj.rotation_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["mars_rotat", "earth_rotat", "rotation_text"], 35, 40)
   
   //moons
-  if(scrollPercentRounded >= 41 && scrollPercentRounded < 46) {
-    show(dataObj.phobos)
-    show(dataObj.deimos)
-    show(dataObj.moon)
-    show(dataObj.moons_text)
-  }else{
-    hide(dataObj.phobos)
-    hide(dataObj.deimos)
-    hide(dataObj.moon)
-    hide(dataObj.moons_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["phobos", "deimos", "moon", "moons_text"], 41, 46)
+  
   //earth rotation
-  if(scrollPercentRounded >= 56 && scrollPercentRounded < 62) {
-    show(dataObj.place_ss_text)
-  }else{
-    hide(dataObj.place_ss_text)
-  }
-  if(scrollPercentRounded >= 62 && scrollPercentRounded < 69) {
-    show(dataObj.solar_rotation_text)
-  }else{
-    hide(dataObj.solar_rotation_text)
-  }
-
-  if(scrollPercentRounded >= 74 && scrollPercentRounded < 82 ) {
-    show(dataObj.temp_text)
-  }else{
-    hide(dataObj.temp_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["place_ss_text"], 56, 62)
+  showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text"], 62, 69)
+  
   //temp
-  if(scrollPercentRounded >= 84 && scrollPercentRounded < 89 ) {
-    show(dataObj.temp_moy)
-    show(dataObj.temp_max)
-    show(dataObj.temp_min)
-  }else{
-    hide(dataObj.temp_moy)
-    hide(dataObj.temp_max)
-    hide(dataObj.temp_min)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["temp_text"], 74, 82)
+  showAndHide(dataObj, scrollPercentRounded, ["temp_moy", "temp_max", "temp_min"], 84, 89)
+  
   //rovers
-  if(scrollPercentRounded >= 92 && scrollPercentRounded < 98 ) {
-    // show(dataObj.nb_rovers)
-    show(dataObj.rovers_text)
-  }else{
-    // hide(dataObj.nb_rovers)
-    hide(dataObj.rovers_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["rovers_text"], 92, 98)
 
   if ((scrollPercentage * totalFrames) / 100 < totalFrames) {
     lottieProgress.goToAndStop((scrollPercentage * totalFrames) / 100, true);
