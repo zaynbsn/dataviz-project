@@ -50,6 +50,9 @@ const swapAstrodexModal = () => {
 const astrodexContent = document.querySelector(".astrodex-content")
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
+if(localStorage.getItem("experiencesDataJson")){
+  experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
+}
 
 // let moonJson = experiencesDataJson.find((exp) => exp.name === 'moon')
 // let marsJson = experiencesDataJson.find((exp) => exp.name === 'mars')
