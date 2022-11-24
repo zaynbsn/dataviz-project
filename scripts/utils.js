@@ -70,17 +70,11 @@ const changeNavBarActive = (currentFrame, markers, index, navbarItems) => {
   
 }
 
-function show(div){
+const show = (div) =>{
   div.classList.add('is-visible')
 }
-function hide(div){
+const hide = (div) => {
   div.classList.remove('is-visible')
-}
-function addClass(div, _class){
-  div.classList.add(_class)
-}
-function removeClass(div, _class){
-  div.classList.remove(_class)
 }
 
 const showAndHide = (dataObj, scrollPercentRounded, divArray, min, max) => {

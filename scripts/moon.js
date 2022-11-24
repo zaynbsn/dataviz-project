@@ -1,4 +1,4 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide } from './utils.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide } from './utils.js'
 
 let moonNavData = await getDataJson('/static/moon/nav-moon.json')
 const navContainer = document.querySelector(".navbar")
@@ -76,76 +76,24 @@ const moonCallback = () => {
   }
 
   // moon diameter
-  if(scrollPercentRounded > 13 && scrollPercentRounded <= 20) {
-    show(dataObj.moon_diameter)
-    show(dataObj.earth_diameter)
-    show(dataObj.diameter_text)
-  }else{
-    hide(dataObj.moon_diameter)
-    hide(dataObj.earth_diameter)
-    hide(dataObj.diameter_text)
-  }
-
+  showAndHide(dataObj, scrollPercentRounded, ["moon_diameter", "earth_diameter", "diameter_text"], 13, 20)
+  
   // distance
-  if(scrollPercentRounded > 23 && scrollPercentRounded <= 29) {
-    show(dataObj.dist_earth_moon)
-    show(dataObj.dist_compare_moon)
-  }else{
-    hide(dataObj.dist_earth_moon)
-    hide(dataObj.dist_compare_moon)
-  }
-  if(scrollPercentRounded > 29 && scrollPercentRounded <= 35) {
-    show(dataObj.dist_text)
-  }else{
-    hide(dataObj.dist_text)
-  }
-
+  showAndHide(dataObj, scrollPercentRounded, ["dist_earth_moon", "dist_compare_moon"], 23, 29)
+  showAndHide(dataObj, scrollPercentRounded, ["dist_text"], 29, 35)
+  
   // first steps & missions
-  if(scrollPercentRounded > 48 && scrollPercentRounded <= 52) {
-    show(dataObj.first_step_dates)
-    show(dataObj.first_step_text)
-  }else{
-    hide(dataObj.first_step_dates)
-    hide(dataObj.first_step_text)
-  }
-  if(scrollPercentRounded > 52 && scrollPercentRounded <= 58) {
-    show(dataObj.missions_text)
-  }else{
-    hide(dataObj.missions_text)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["first_step_dates", "first_step_text"], 48, 52)
+  showAndHide(dataObj, scrollPercentRounded, ["missions_text"], 52, 58)
   
   // gravity
-  if(scrollPercentRounded > 64 && scrollPercentRounded <= 73) {
-    show(dataObj.moon_gravity)
-    show(dataObj.earth_gravity)
-    show(dataObj.gravity_text)
-  }else{
-    hide(dataObj.moon_gravity)
-    hide(dataObj.earth_gravity)
-    hide(dataObj.gravity_text)
-  }
-
+  showAndHide(dataObj, scrollPercentRounded, ["moon_gravity", "earth_gravity", "gravity_text"], 64, 73)
+  
   // periodic cycle
-  if(scrollPercentRounded > 75 && scrollPercentRounded <= 98) {
-    show(dataObj.periodic_cycle)
-  }else{
-    hide(dataObj.periodic_cycle)
-  }
-  if(scrollPercentRounded > 75 && scrollPercentRounded <= 80) {
-    show(dataObj.cycle_text_1)
-  }else{
-    hide(dataObj.cycle_text_1)
-  }
-  if(scrollPercentRounded > 80 && scrollPercentRounded <= 90) {
-    show(dataObj.cycle_text_2)
-  }else{
-    hide(dataObj.cycle_text_2)
-  }
-  if(scrollPercentRounded > 90 && scrollPercentRounded <= 98) {
-    show(dataObj.cycle_text_3)
-  }else{
-    hide(dataObj.cycle_text_3)
-  }
+  showAndHide(dataObj, scrollPercentRounded, ["periodic_cycle"], 75, 98)
+  showAndHide(dataObj, scrollPercentRounded, ["cycle_text_1"], 75, 80)
+  showAndHide(dataObj, scrollPercentRounded, ["cycle_text_2"], 80, 90)
+  showAndHide(dataObj, scrollPercentRounded, ["cycle_text_3"], 90, 98)
 
   if ((scrollPercentage * totalFrames) / 100 < totalFrames) {
     lottieProgress.goToAndStop((scrollPercentage * totalFrames) / 100, true);

@@ -1,4 +1,4 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide, showAndHide } from './utils.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide } from './utils.js'
 
 let marsNavData = await getDataJson('/static/mars/nav-mars.json')
 const navContainer = document.querySelector(".navbar")
