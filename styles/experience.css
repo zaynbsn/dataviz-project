@@ -64,7 +64,7 @@ canvas{
 .data{
   width: fit-content;
   height: fit-content;
-  max-width: 250px;
+  max-width: 20vw;
   text-align: left;
   color: rgb(255, 255, 255);
   z-index: 2;
@@ -73,6 +73,9 @@ canvas{
   font-family: 'Gravity-Expanded';
   font-family: 'Gravity-Compressed'; */
   font-family: 'Gravity-Condensed';
+  font-family: 'Helvetica';
+  font-weight: 400;
+  line-height: 130%;
   /* font-family: 'minecraft'; */
   position: fixed;
   font-weight: bold;

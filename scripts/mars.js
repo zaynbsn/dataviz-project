@@ -1,30 +1,18 @@
-import { getDataJson, appendData, selectAllDataDivs, changeNavBarActive, show, hide } from './utils.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide } from './utils.js'
 
 let marsNavData = await getDataJson('/static/mars/nav-mars.json')
 const navContainer = document.querySelector(".navbar")
 
+
 for (const item in marsNavData){
-  let div = document.createElement("div")
-  div.classList.add("navbar-item")
-  div.classList.add(item)
-  if (item === 'mars') div.classList.add('is-active')
-  div.innerHTML =  `<div class="navbar-icons">
-                      <img src="./static/icons/${item}.svg"/>
-                    </div>
-                    <div>
-                      <p>${marsNavData[item]}</p>
-                    </div>`
-  navContainer.appendChild(div)
+  appendNavbar(item, marsNavData, navContainer)
 }
 
 const mainContainer = document.getElementById("myData")
 
-// let marsTextsJson = await getDataJson('/static/mars/texts-mars.json')
-
 // get data from right json
 const url = '/static/mars/data-mars.json'
 let marsDataJson = await getDataJson(url)
-// console.log('marsDataJson', marsDataJson)
 
 
 // append data from json in dom
@@ -62,7 +50,7 @@ const launchAnim = async (path, callback) => {
       allMarkersPositions.push(marker.time * 5)
     }
     for (let i=0; i < navbarItems.length; i++){
-      navbarItems[i].addEventListener('click', async () => {
+      navbarItems[i].addEventListener('click', () => {
         isNavClicked = true
         scrollbar.scrollTo(0, allMarkersPositions[i], 5000)
         setTimeout(() => {
@@ -99,6 +87,13 @@ const marsCallback = () => {
   // if(currentFrame > 20){
   //   lottieProgress.firstFrame = 20;
   // }
+
+  if(!isNavClicked){
+    for(let i=0; i < 9 ; i++){
+    changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
+    }
+  }
+
   if(scrollPercentRounded > 4 && scrollPercentRounded <= 8) {
     show(dataObj.mars_intro_text)
   }else{
@@ -115,11 +110,7 @@ const marsCallback = () => {
     hide(dataObj.earth_diameter)
     hide(dataObj.diameter_text)
   }
-  if(!isNavClicked){
-    for(let i=0; i < 8 ; i++){
-    changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
-    }
-  }
+
 
   
   //mars and earth mass
