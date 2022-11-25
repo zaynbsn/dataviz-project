@@ -90,5 +90,15 @@ const showAndHide = (dataObj, scrollPercentRounded, divArray, min, max) => {
   }
 }
 
+const getRandomCoordinate = () => {
+  const top = `${randomPercentage(0.05, 0.95)}%`
+  const right = `${randomPercentage(0.1, 0.6)}%`
+  return [top, right]
+}
 
-export { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, show, hide, showAndHide }
+const randomPercentage = (min, max) => {
+  return Math.floor((Math.random() * (max - min) + min) * 100)
+}
+
+
+export { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide, getRandomCoordinate }

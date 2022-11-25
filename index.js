@@ -1,4 +1,4 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide } from './scripts/utils.js'
+import { getDataJson, getRandomCoordinate } from './scripts/utils.js'
 
 // curseur
 const circle=document.querySelector("#night");
@@ -54,6 +54,42 @@ if(localStorage.getItem("experiencesDataJson")){
   experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
 }
 
+// randomize planet position
+const body = document.body
+const expToDiscover = experiencesDataJson.find((exp) => exp.discovered === false)
+if(expToDiscover){
+  let div = document.createElement("div")
+  const coordinate = getRandomCoordinate()
+  div.style.top = coordinate[0]
+  div.style.right = coordinate[1]
+  div.style.position = 'absolute'
+
+  div.innerHTML = `<a href="${expToDiscover.link_to}">
+                    <img src="${expToDiscover.asset}" class="svg-${expToDiscover.name}" />
+                  </a>`
+  body.appendChild(div)
+}else{
+  // if all discovered
+  const coordinatesArray = []
+  for (const exp of experiencesDataJson){
+    let div = document.createElement("div")
+
+    const coordinate = getRandomCoordinate()
+    for (const tuple of coordinatesArray){
+      while(tuple[0]-3 <= coordinate[0] && coordinate[0] <= tuple[0]+3 && tuple[1]-3 <= coordinate[1] && coordinate[1] <= tuple[1]+3){
+        coordinate = getRandomCoordinate()
+      }
+    }
+    coordinatesArray.push(coordinate)
+    div.style.top = coordinate[0]
+    div.style.right = coordinate[1]
+    div.style.position = 'absolute'
+    div.innerHTML = `<a href="${exp.link_to}">
+                      <img src="${exp.asset}" class="svg-${exp.name}" />
+                    </a>`
+    body.appendChild(div)
+  }
+}   
 // let moonJson = experiencesDataJson.find((exp) => exp.name === 'moon')
 // let marsJson = experiencesDataJson.find((exp) => exp.name === 'mars')
 
@@ -74,7 +110,6 @@ for(const experience of experiencesDataJson){
     experiences.appendChild(div)
     const discovered = document.querySelector(`.${experience.name}`)
     const discoveredButton = document.querySelector(`.${experience.name}-button`)
-    console.log(discovered)
     discovered.style.backgroundColor = experience.bg_color
     discovered.style.color = experience.title_color
     discoveredButton.style.backgroundColor = experience.button_bg_color
