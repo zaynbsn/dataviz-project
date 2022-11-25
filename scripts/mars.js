@@ -32,9 +32,6 @@ let lottieProgress
 let allMarkersPositions = []
 let isNavClicked = false
 let navbarItems = document.querySelectorAll(".navbar-item")
-
-// console.log('navbarItems', navbarItems)
-// select all divs
 let dataObj = selectAllDataDivs(marsDataJson)
 
 const launchAnim = async (path, callback) => {
@@ -65,10 +62,6 @@ const launchAnim = async (path, callback) => {
         let currentActive = document.querySelector(".is-active");
         currentActive.classList.remove("is-active")
         navbarItems[i].classList.add("is-active");
-        // let svgSrc = navbarItems[i].children[0].children[0].src
-        // console.log('navbarItems', navbarItems[i])
-        // console.log(marsNavData)
-        // console.log(svgSrc) 
       })
     }
     scrollbar.scrollTo(0, allMarkersPositions[0], 2000) 
@@ -83,16 +76,6 @@ const marsCallback = () => {
   let currentFrame = lottieProgress.currentFrame
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
-  // console.log("currentFrame", currentFrame)
-  // console.log('scrollFromTop', scrollFromTop)
-  // console.log('totalHeight', totalHeight)
-  // console.log('markers', allMarkersPositions)
-  // console.log("------------------------")
-  // console.log(scrollPercentRounded)
-
-  // if(currentFrame > 20){
-  //   lottieProgress.firstFrame = 20;
-  // }
 
   if(!isNavClicked){
     for(let i=0; i < 9 ; i++){
@@ -133,17 +116,6 @@ const marsCallback = () => {
   } else {
     return;
   }
-
-  // --------------------LOOP---------------------
-  // if(scrollPercentRounded === 100 ){
-  //   // Scrollbar.destroyAll();
-  //   scrollbar.destroy();
-  //   scrollbar.removeListener(marsCallback);
-  //   document.querySelector(".lottie-progress").innerHTML = '';
-  //   lottieProgress = null;
-    
-  //   launchAnim( "./static/mars/mars-v4.json", marsCallback);
-  // }
 }
 
 launchAnim("./static/mars/mars-v-final.json", marsCallback)
