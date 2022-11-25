@@ -1,5 +1,13 @@
 import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide } from './utils.js'
 
+let experiencesDataJson = await getDataJson("./static/experiences.json")
+if(localStorage.getItem("experiencesDataJson")){
+  experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
+}
+experiencesDataJson[0].discovered = true
+localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
+
+
 let moonNavData = await getDataJson('/static/moon/nav-moon.json')
 const navContainer = document.querySelector(".navbar")
 
