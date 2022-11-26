@@ -4,19 +4,23 @@
     "discovered": false,
     "asset": "./static/Moon.svg",
     "link_to": "/moon.html",
-    "bg_color": "#d2cbf4",
-    "title_color": "black",
-    "button_bg_color": "black",
-    "button_text_color": "white"
+    "bg_color": "#F6F6F9",
+    "second_layer_color": "#DEDDE5",
+    "third_layer_color": "#C7C6CD",
+    "title_color": "#363636",
+    "button_bg_color": "#363636",
+    "button_text_color": "#ECE9FF"
   },
   {
     "name": "mars",
     "discovered": false,
     "asset": "./static/Mars.svg",
     "link_to": "/mars.html",
-    "bg_color": "#ffe0e3",
-    "title_color": "#CD4C66",
-    "button_bg_color": "#CD4C66",
-    "button_text_color": "white"
+    "bg_color": "#FFE0E3",
+    "second_layer_color": "#FFC2C8",
+    "third_layer_color": "#FFA8B1",
+    "title_color": "#B43D52",
+    "button_bg_color": "#B43D52",
+    "button_text_color": "#ECE9FF"
   }
 ]

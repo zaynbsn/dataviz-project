@@ -89,9 +89,117 @@ if(expToDiscover){
                     </a>`
     body.appendChild(div)
   }
-}   
-// let moonJson = experiencesDataJson.find((exp) => exp.name === 'moon')
-// let marsJson = experiencesDataJson.find((exp) => exp.name === 'mars')
+}
+
+
+
+const continueCallback = () => {
+  const rightDialogue = dialogueJson.find(dialogue => {
+    if(dialogue.state === fsm.state) return dialogue
+  })
+  
+  if(count < rightDialogue.texts.length){
+    if(fsm.state === 'start'){
+      const svgContainer = document.querySelector(".svg-container")
+      if(count === 4){
+        svgContainer.style.zIndex = 13
+      }
+      if(count === 5){
+        svgContainer.style.zIndex = 11
+        swapAstrodexModal()
+      }
+      if(count === 6){
+        swapAstrodexModal()
+      }
+    }
+    dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
+    count += 1
+  }else{
+    astrobotModal.style.display = 'none'
+    dialogueContent.style.display = 'none'
+    astrobot.style.display = 'none'
+    document.removeEventListener('keydown', continueCallback)
+  }
+}
+
+const dialogueJson = await getDataJson('./static/dialogues/dialogues.json')
+let moonJson = experiencesDataJson.find((exp) => exp.name === 'moon')
+let marsJson = experiencesDataJson.find((exp) => exp.name === 'mars')
+const astrobotModal = document.querySelector('.astrobot-modal')
+const dialogueContent = document.querySelector('.dialogue-content')
+const astrobot = document.querySelector(".astrobot")
+const dialogue = document.querySelector(".dialogue")
+let count = 0
+
+let fsm = new StateMachine({
+  init: `${moonJson.discovered === true 
+            ? marsJson.discovered === true 
+            ? 'moonExp' 
+            : 'hoverMoon' 
+            : 'start'}`,
+  transitions: [
+    { name: 'hoveringMoon',     from: 'start',  to: 'hoverMoon' },
+    { name: 'moonDiscovered',   from: 'hoverMoon', to: 'moonExp'  },
+    { name: 'marsDiscovered', from: 'moonExp',    to: 'marsExp' },
+  ],
+  methods: {
+    onHoveringMoon:     function() { console.log('clique sur la lune pour découvrir ses données')},
+    onMoonDiscovered:   function() { console.log('bravo tu as recolté les données de mars!')},
+    onMarsDiscovered:   function() { console.log('bravo tu as recolté les données de mars!')},
+  }
+});
+if(moonJson.discovered === true){
+  if(marsJson.discovered === true){
+  fsm.marsDiscovered()
+  }else{
+    fsm.moonDiscovered()
+  }
+}
+
+// START STATE
+if(fsm.state === 'start' || fsm.state === 'moonExp' || fsm.state === 'marsExp' ){
+  count = 0
+  astrobotModal.style.display = 'block'
+  dialogueContent.style.display = 'block'
+  astrobot.style.display = 'block'
+
+  const rightDialogue = dialogueJson.find(dialogue => {
+    if(dialogue.state === fsm.state) return dialogue
+  })
+
+  dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
+  count += 1
+
+  document.addEventListener('keydown', continueCallback)
+}
+
+// MOONHOVER STATE
+if(fsm.state === 'start'){
+  const svgMoon = document.querySelector('.svg-moon')
+
+  svgMoon.addEventListener('mouseenter', async () => {
+    if(fsm.state === 'start'){
+      count = 0
+      fsm.hoveringMoon()
+      svgMoon.style.zIndex = 100
+      svgMoon.style.transform = 'scale(3)'
+      setTimeout(() => {
+        astrobotModal.style.display = 'block'
+        dialogueContent.style.display = 'block'
+        astrobot.style.display = 'block'
+      },1000)
+      
+      const rightDialogue = dialogueJson.find(dialogue => {
+        if(dialogue.state === fsm.state) return dialogue
+      })
+      
+      dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
+      count += 1
+
+      document.addEventListener('keydown', continueCallback)
+    }
+  })
+}
 
 const experiences = document.querySelector(".experiences")
 
@@ -101,19 +209,26 @@ for(const experience of experiencesDataJson){
   div.style.width = `calc(100% / ${experiencesDataJson.length})`
   if(experience.discovered){
     div.innerHTML = `<div class="discovered ${experience.name}">
+                      <div class="second-layer second-layer-${experience.name}"></div>
+                      <div class="third-layer third-layer-${experience.name}"></div>
                       <img src="${experience.asset}"/>
-                      <h1>${experience.name.toUpperCase()}</h1>
-                      <a href="${experience.link_to}">
+                      <h1 style="z-index: 11; font-weight: 900;">${experience.name.charAt(0).toUpperCase() + experience.name.slice(1)}</h1>
+                      <a href="${experience.link_to}" style="z-index: 11;">
                         <button class="discovered-button ${experience.name}-button">Inspecter</button>
                       </a>
                     </div>`
     experiences.appendChild(div)
     const discovered = document.querySelector(`.${experience.name}`)
     const discoveredButton = document.querySelector(`.${experience.name}-button`)
+    const secondLayer = document.querySelector(`.second-layer-${experience.name}`)
+    const thirdLayer = document.querySelector(`.third-layer-${experience.name}`)
+    // add some style
     discovered.style.backgroundColor = experience.bg_color
     discovered.style.color = experience.title_color
     discoveredButton.style.backgroundColor = experience.button_bg_color
     discoveredButton.style.color = experience.button_text_color
+    secondLayer.style.backgroundColor = experience.second_layer_color
+    thirdLayer.style.backgroundColor = experience.third_layer_color
   }else{
     div.innerHTML = `<img src="./static/corrupted.svg"/>`
     experiences.appendChild(div)
