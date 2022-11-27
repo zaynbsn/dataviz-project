@@ -68,13 +68,13 @@ body{
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 100;
+  z-index: 11;
   display: flex;
   align-items: end;
   justify-content: end;
 }
 .svg-scene{
-  z-index: 100;
+  z-index: 11;
   width: 100%;
   position: absolute;
   bottom: -30px;
@@ -87,7 +87,7 @@ body{
   width: 50px;
   height: auto;
   position: absolute;
-  z-index: 101;
+  z-index: 11;
   top: 9.8%;
   left: 58%;
   /* border: 1px solid red; */
@@ -105,11 +105,13 @@ body{
   left: calc(50% - 100px);
   z-index: 90;
 }
-
+.planet{
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
 .svg-mars{
   position: absolute;
-  top: 100px;
-  right: 150px;
   z-index: 1;
   transition: all 2s;
   width: 25px;
@@ -117,8 +119,6 @@ body{
 }
 .svg-moon{
   position: absolute;
-  top: 300px;
-  right: 500px;
   z-index: 1;
   transition: all 2s;
   width: 35px;
@@ -126,7 +126,7 @@ body{
 }
 .svg-mars:hover, .svg-moon:hover{
   transform: scale(3);
-  z-index: 100;
+  z-index: 10;
   transition-delay:0.3s;
 }
 .astrodex{
@@ -135,7 +135,7 @@ body{
   height: 70%;
   top: calc(50% - 35%);
   right: 0;
-  z-index: 100;
+  z-index: 11;
   cursor: pointer;
   display: block;
 }
@@ -154,7 +154,7 @@ body{
   position: absolute;
   top: calc(50% - 35%) ;
   right: 0;
-  z-index: 100;
+  z-index: 13;
 }
 
 .astrodex-content{
@@ -218,7 +218,7 @@ body{
 }
 
 .discovered{
-  width: 75%;
+  width: 70%;
   height: 82%;
   display: flex;
   flex-direction: column;
@@ -227,11 +227,31 @@ body{
   font-family: 'Helvetica';
   font-weight: bold;
   border-radius: 200px 200px 0px 0px;
+  position: relative;
 }
 .discovered img{
-  width: 50%;
+  width: 70%;
   height: auto;
+  z-index: 11;
 }
+.second-layer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  height: 85%;
+  border-radius: 200px 200px 0 0;
+}
+.third-layer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 66%;
+  height: 66%;
+  border-radius: 200px 200px 0 0;
+}
+
+
 .discovered-button{
   width: fit-content;
   height: fit-content;
@@ -240,3 +260,70 @@ body{
   border: none;
   border-radius: 512px;
 }
+
+.astrobot-modal{
+  z-index: 12;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0, 0.7);
+}
+
+.dialogue-content{
+  width: 650px;
+  height: 200px;
+  background-image: url("../static/dialogue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 14;
+  position: absolute;
+  bottom: 16px;
+  left: calc(50% - 30vw);
+  cursor: pointer;
+  display: none;
+  /* border: 1px solid red; */
+}
+.dialogue{
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+.text-dialogue{
+  width: 90%;
+  height: fit-content;
+  margin-top: 56px;
+  margin-left: 32px;
+  color: white;
+  font-family: "Helvetica";
+  font-weight: 400;
+  font-size: 1rem;
+  /* border: 1px solid red; */
+}
+.click-to-continue{
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  color: rgba(255,255,255,0.6);
+  font-family: "Helvetica";
+  font-size: 0.8rem;
+  z-index: 101;
+}
+
+.astrobot{
+  width: 200px;
+  height: auto  ;
+  z-index: 14;
+  position: absolute;
+  bottom: -16px;
+  left: calc(68.5%);
+  display: none;
+  /* border: 1px solid red; */
+}
+.astrobot img{
+  width: 100%;
+  height: 100%;
+}
+

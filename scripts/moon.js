@@ -48,7 +48,6 @@ const launchAnim = async (path, callback) => {
     autoplay: false,
     path: path
   })
-  console.log(lottieProgress)
   lottieProgress.addEventListener('data_ready', ()  => {
     for (const marker of lottieProgress.markers){
       allMarkersPositions.push(marker.time * 5.67)

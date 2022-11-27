@@ -1,0 +1,42 @@
+[
+  {
+    "state": "start",
+    "id": 0,
+    "texts" : [
+        "Arrgh... Oh nooon ! Il y a eu une anomalie dans notre système informatique !",
+        "J’ai perdu toutes les données d’observation. Elles sont toutes corrompues. Il faut absolument que je les retrouve !",
+        "Pourrais-tu m’aider à les retrouver s’il te plait ?",
+        "Super ! Merci beaucoup !",
+        "Je te présente notre télescope. Tu peux le contrôler avec ta souris pour observer le ciel et m’aider à retrouver les données perdues.",
+        "Pour t’aider à récolter les données, je te donne mon Astrodex. C’est ici que tu pourras voir les données retrouvées et celles qui sont encore manquantes.",
+        "Tu es maintenant prêt ! Pour commencer pourrais-tu partir à la recherche de la LUNE"
+    ]
+  },
+  {
+    "state": "hoverMoon",
+    "id": 0,
+    "texts" : [
+        "Wow tu l’as déjà trouvé ! Tu as vraiment ça dans le sang !",
+        "Maintenant clique sur la Lune pour retrouver toutes ses données perdues !"
+    ]
+  },
+  {
+    "state": "moonExp",
+    "id": 0,
+    "texts" : [
+        "Super, tu as retrouvé toutes les données de la LUNE !",
+        "Tu peux à tout moment consulter l’Astrodex pour revoir les données de la LUNE.",
+        "Mais ne perdons pas de temps, partons à la recherche de la planète MARS !"
+    ]
+  },
+  {
+    "state": "marsExp",
+    "id": 0,
+    "texts" : [
+        "Bravo, l’astrodex est maintenant complet ! Et c’est grâce à toi !",
+        "J’espère que tu en as profité pour apprendre pleins d’anecdotes sur l’astronomie.",
+        "Tu pourras toujours consulter l’Astrodex ou retrouver les astres découverts dans le ciel pour revoir les données que tu as retrouvées.",
+        "Merci de m’avoir aidé ! A bientôt je l’espère <3"
+    ]
+  }
+]
