@@ -136,7 +136,6 @@ body{
   top: calc(50% - 35%);
   right: 0;
   z-index: 11;
-  cursor: pointer;
   display: block;
 }
 .astrodex img{
@@ -256,7 +255,7 @@ body{
   width: fit-content;
   height: fit-content;
   font-weight: bolder;
-  padding: 16px 32px;
+  padding: 12px 32px;
   border: none;
   border-radius: 512px;
 }
@@ -282,7 +281,6 @@ body{
   position: absolute;
   bottom: 16px;
   left: calc(50% - 30vw);
-  cursor: pointer;
   display: none;
   /* border: 1px solid red; */
 }
@@ -317,7 +315,7 @@ body{
   height: auto  ;
   z-index: 14;
   position: absolute;
-  bottom: -16px;
+  bottom: -4px;
   left: calc(68.5%);
   display: none;
   /* border: 1px solid red; */
