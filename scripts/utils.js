@@ -78,7 +78,6 @@ const hide = (div) => {
 }
 
 const showAndHide = (dataObj, scrollPercentRounded, divArray, min, max) => {
-  console.log(dataObj)
   if(scrollPercentRounded > min && scrollPercentRounded < max) {
     for(const div of divArray){
       show(dataObj[div])
