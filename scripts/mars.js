@@ -48,10 +48,12 @@ const launchAnim = async (path, callback) => {
   })
 
   lottieProgress.addEventListener('data_ready', ()  => {
-    const ratio = scrollbar.limit.y / lottieProgress.totalFrames + 0.25
-
+    const ratio = scrollbar.limit.y / lottieProgress.totalFrames
+    let count = 4
     for (const marker of lottieProgress.markers){
-      allMarkersPositions.push(marker.time * ratio)
+      console.log(count)
+      allMarkersPositions.push(marker.time * (ratio + count / 10))
+      count -= 0.50
     }
 
     for (let i=0; i < navbarItems.length; i++){
@@ -96,7 +98,7 @@ const marsCallback = () => {
   showAndHide(dataObj, scrollPercentRounded, ["mars_mass9", "earth_mass9"], 23, 26)
   
   //flight duration
-  showAndHide(dataObj, scrollPercentRounded, ["flight_duration", "duration_text"], 31, 35)
+  showAndHide(dataObj, scrollPercentRounded, ["flight_duration", "duration_text"], 30, 35)
   
   //rotation
   showAndHide(dataObj, scrollPercentRounded, ["mars_rotat", "earth_rotat", "rotation_text"], 35, 40)

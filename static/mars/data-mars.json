@@ -40,8 +40,8 @@
   "solar_rotation_text2": {"value": "Sur la Terre une année fait 365,25 jours alors que sur Mars, elle fait 668,6 jours.", 
                           "x": "40%", "y": "45%", "size": "1.2vw", "color": "black"
                         },
-  "solar_rotation_text3": {"value": "Malheureusement, vivre sur Mars ne nous fera pas vieillir moins :)", 
-                          "x": "40%", "y": "46%", "size": "1.2vw", "color": "black"
+  "solar_rotation_text3": {"value": " La terre a donc le temps de faire deux fois le tour du soleil pendant que mars n'en fait qu'un.", 
+                          "x": "40%", "y": "45%", "size": "1.2vw", "color": "black"
                         },
 
   "temp_min": {"value": "-140°C", "x": "25.5%", "y": "71%", "size": "2.25vw", "color": "white"},
