@@ -279,17 +279,17 @@ body{
 }
 
 .dialogue-content{
-  width: 50%;
-  height: 30%;
+  width: 50vw;
+  min-height: 27vh;
   background-image: url("../static/dialogue.svg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 14;
   position: absolute;
   bottom: 16px;
-  left: calc(50% - 30vw);
+  left: calc(50% - 25vw);
   display: none;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 .dialogue{
   width: 100%;
@@ -299,32 +299,32 @@ body{
 .text-dialogue{
   width: 90%;
   height: fit-content;
-  margin-top: 8%;
-  margin-left: 32px;
+  margin-top: 7vh;
+  margin-left: 3vh;
   color: white;
   font-family: "Helvetica";
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 2vh;
   /* border: 1px solid red; */
 }
 .click-to-continue{
   position: absolute;
-  right: 16px;
-  bottom: 16px;
+  right: 3vh;
+  bottom: 2vh;
   color: rgba(255,255,255,0.6);
   font-family: "Helvetica";
-  font-size: 0.8rem;
+  font-size: 1.3vh;
   z-index: 101;
   /* border: 1px solid red; */
 }
 
 .astrobot{
   width: auto;
-  height: 30%;
+  height: 27vh;
   z-index: 14;
   position: absolute;
   bottom: -4px;
-  left: calc(68.5%);
+  left: calc(50% + 20vw);
   display: none;
   /* border: 1px solid red; */
 }
