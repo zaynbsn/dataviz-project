@@ -133,7 +133,7 @@ body{
   position: absolute;
   width: auto;
   height: 485px;
-  top: calc(50% - 300px);
+  top: calc(50% - 485px / 2);
   right: 0;
   z-index: 11;
   display: block;
@@ -152,7 +152,7 @@ body{
   background-repeat: no-repeat;
   display: none;
   position: absolute;
-  top: calc(50% - 300px);
+  top: calc(50% - 485px / 2);
   right: 0;
   z-index: 13;
   /* border: 1px solid red; */
