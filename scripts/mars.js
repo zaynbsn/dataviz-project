@@ -48,9 +48,12 @@ const launchAnim = async (path, callback) => {
   })
 
   lottieProgress.addEventListener('data_ready', ()  => {
+    const ratio = scrollbar.limit.y / lottieProgress.totalFrames + 0.25
+
     for (const marker of lottieProgress.markers){
-      allMarkersPositions.push(marker.time * 5.2)
+      allMarkersPositions.push(marker.time * ratio)
     }
+
     for (let i=0; i < navbarItems.length; i++){
       navbarItems[i].addEventListener('click', () => {
         isNavClicked = true
