@@ -212,7 +212,7 @@ for(const experience of experiencesDataJson){
                       <div class="second-layer second-layer-${experience.name}"></div>
                       <div class="third-layer third-layer-${experience.name}"></div>
                       <img src="${experience.asset}"/>
-                      <h1 style="z-index: 11; font-weight: 900;">${experience.name.charAt(0).toUpperCase() + experience.name.slice(1)}</h1>
+                      <div style="z-index: 11; font-weight: 900;">${experience.name.charAt(0).toUpperCase() + experience.name.slice(1)}</div>
                       <a href="${experience.link_to}" style="z-index: 11;">
                         <button class="discovered-button ${experience.name}-button">Inspecter</button>
                       </a>
