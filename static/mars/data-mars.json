@@ -5,8 +5,10 @@
   "diameter_text": {"value": "Le diamètre de Mars est environ deux fois plus petit que celui de la Terre.", 
                     "x": "60%", "y": "20%", "size": "1.2vw", "color": "white"
                   },
-  "mars_mass": {"value": " 6,39 × 10^23 kg", "x": "62%", "y": "53%", "size": "2.25vw", "color": "black"}, 
-  "earth_mass": {"value": "5,972 × 10^24 kg", "x": "21%", "y": "68%", "size": "2.25vw", "color": "black"},
+  "mars_mass": {"value": "1 Mars", "x": "66%", "y": "53%", "size": "2.25vw", "color": "black"}, 
+  "earth_mass": {"value": "1 Terre", "x": "25.5%", "y": "68%", "size": "2.25vw", "color": "black"},
+  "earth_mass9": {"value": "1 Terre", "x": "25.5%", "y": "58%", "size": "2.25vw", "color": "black"},
+  "mars_mass9": {"value": "9 Mars", "x": "66%", "y": "58%", "size": "2.25vw", "color": "black"}, 
   "mass_text": {"value": "De part sa composition et sa taille réduite, Mars a une masse 9 fois inférieur à celle de la Terre. ",
                 "x": "45%", "y": "16%","size": "1.2vw", "color": "white"
               },
@@ -18,32 +20,50 @@
 
   "mars_rotat": {"value": " 24h 40min", "x": "66%", "y": "46%", "size": "1.6875vw", "color": "white"},
   "earth_rotat": {"value": "23h 56min 4sec", "x": "22%", "y": "46%", "size": "2.25vw", "color": "white"},
-  "rotation_text": {"value": "",
+  "rotation_text": {"value": "La terre et Mars mettent presque le même temps à completer un tour sur elles même",
                     "x": "60%", "y": "20%", "size": "1.2vw", "color": "white"
                     },
 
   "phobos": {"value": "Phobos", "x": "83%", "y": "23%", "size": "1.6875vw", "color": "white"},
   "deimos": {"value": "Déimos", "x": "50%", "y": "68%", "size": "1.6875vw", "color": "white"},
   "moon" :{"value": "Lune", "x": "50%", "y": "15%", "size": "1.6875vw", "color": "white"},
-  "moons_text": {"value": "La Terre possède un satellite naturel, la Lune. Mars en possède 2, Phobos et Déimos. ",
+  "moons_text": {"value": "La Terre possède un satellite naturel, la Lune. Mars en possède 2, Phobos et Déimos. ",
                   "x": "70%", "y": "70%", "size": "1.2vw", "color": "white"
                 },
 
   "place_ss_text": {"value": "Mars est tout comme la Terre une planète appartenant à notre système solaire. Par rapport au Soleil, la Terre est la 3e planète et Mars est la 4e.", 
                           "x": "40%", "y": "43%", "size": "1.2vw", "color": "black"
                         },
-  "solar_rotation_text": {"value": "Une année est le temps que mets une planète pour effectuer le tour du Soleil. Sur la Terre une année fait 365,25 jours alors que sur Mars, elle fait 668,6 jours. (Malheureusement, vivre sur Mars ne nous ferras pas vieillir moins vite) ", 
-                          "x": "41%", "y": "40%", "size": "1.2vw", "color": "black"
+  "solar_rotation_text": {"value": "Une année est le temps que mets une planète pour effectuer le tour du Soleil.", 
+                          "x": "40%", "y": "45%", "size": "1.2vw", "color": "black"
+                        },
+  "solar_rotation_text2": {"value": "Sur la Terre une année fait 365,25 jours alors que sur Mars, elle fait 668,6 jours.", 
+                          "x": "40%", "y": "45%", "size": "1.2vw", "color": "black"
+                        },
+  "solar_rotation_text3": {"value": "Malheureusement, vivre sur Mars ne nous fera pas vieillir moins :)", 
+                          "x": "40%", "y": "46%", "size": "1.2vw", "color": "black"
                         },
 
   "temp_min": {"value": "-140°C", "x": "25.5%", "y": "71%", "size": "2.25vw", "color": "white"},
   "temp_moy": {"value": "-65°C", "x": "47%", "y": "71%", "size": "2.25vw", "color": "white"},
   "temp_max": {"value": "20°C", "x": "68.5%", "y": "71%", "size": "2.25vw", "color": "white"},
-  "temp_text": {"value": "En fonction des régions et des périodes de l’année, les températures minimales de Mars peuvent descendre sous les -165°C, les températures moyennes sont de -65°C et et les températures maximales peuvent atteindre les 20°C. Bien loin des températures de la Terre avec ses 15°C de moyennes. ", 
+  "temp_text": {"value": "En fonction des régions et des périodes de l’année, les températures minimales de Mars peuvent descendre sous les -165°C", 
+                "x": "60%", "y": "20%", "size": "1.2vw", "color": "white"
+              },
+  "temp_text2": {"value": "Les températures moyennes sont de -65°C et les températures maximales peuvent atteindre les 20°C.", 
+                "x": "60%", "y": "20%", "size": "1.2vw", "color": "white"
+              },
+  "temp_text3": {"value": "", 
+                "x": "60%", "y": "20%", "size": "1.2vw", "color": "white"
+              },
+  "temp_text4": {"value": "On se retrouve bien loin des températures de la Terre avec ses 15°C de moyennes.", 
                 "x": "60%", "y": "20%", "size": "1.2vw", "color": "white"
               },
 
-  "rovers_text": {"value": "9 robots envoyés par l’Homme ont déjà touché le seul Martien, 6 sondes et 3 rovers. Aujourd’hui seulement deux sont encore en activité : Curiosity arrivé en 2012 et Perseverance arrivé en 2020.", 
-                  "x": "40%", "y": "40%", "size": "1.2vw", "color": "white"
+  "rovers_text": {"value": "9 robots envoyés par l’Homme ont déjà touché le seul Martien, 6 sondes et 3 rovers.", 
+                  "x": "40%", "y": "45%", "size": "1.2vw", "color": "white"
+                },
+  "rovers_text2": {"value": "Aujourd’hui seulement deux sont encore en activité : Curiosity (2012) et Perseverance (2020).", 
+                  "x": "40%", "y": "45%", "size": "1.2vw", "color": "white"
                 }
 }

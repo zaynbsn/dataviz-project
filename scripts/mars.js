@@ -49,7 +49,7 @@ const launchAnim = async (path, callback) => {
 
   lottieProgress.addEventListener('data_ready', ()  => {
     for (const marker of lottieProgress.markers){
-      allMarkersPositions.push(marker.time * 5)
+      allMarkersPositions.push(marker.time * 5.2)
     }
     for (let i=0; i < navbarItems.length; i++){
       navbarItems[i].addEventListener('click', () => {
@@ -88,7 +88,9 @@ const marsCallback = () => {
   showAndHide(dataObj, scrollPercentRounded, ["mars_diameter", "earth_diameter", "diameter_text"], 11, 15)
   
   //mars and earth mass
-  showAndHide(dataObj, scrollPercentRounded, ["mars_mass", "earth_mass", "mass_text"], 18, 23)
+  showAndHide(dataObj, scrollPercentRounded, ["mass_text"], 18, 23)
+  // showAndHide(dataObj, scrollPercentRounded, ["mars_mass", "earth_mass", "mass_text"], 18, 23)
+  showAndHide(dataObj, scrollPercentRounded, ["mars_mass9", "earth_mass9"], 23, 26)
   
   //flight duration
   showAndHide(dataObj, scrollPercentRounded, ["flight_duration", "duration_text"], 31, 35)
@@ -100,15 +102,20 @@ const marsCallback = () => {
   showAndHide(dataObj, scrollPercentRounded, ["phobos", "deimos", "moon", "moons_text"], 41, 46)
   
   //earth rotation
-  showAndHide(dataObj, scrollPercentRounded, ["place_ss_text"], 56, 62)
-  showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text"], 62, 69)
+  showAndHide(dataObj, scrollPercentRounded, ["place_ss_text"], 54, 57)
+  showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text"], 57, 61)
+  showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text2"], 61, 65)
+  showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text3"], 65, 69)
   
   //temp
-  showAndHide(dataObj, scrollPercentRounded, ["temp_text"], 74, 82)
+  showAndHide(dataObj, scrollPercentRounded, ["temp_text"], 74, 77)
+  showAndHide(dataObj, scrollPercentRounded, ["temp_text2"], 77, 80)
+  showAndHide(dataObj, scrollPercentRounded, ["temp_text4"], 80, 82)
   showAndHide(dataObj, scrollPercentRounded, ["temp_moy", "temp_max", "temp_min"], 84, 89)
   
   //rovers
-  showAndHide(dataObj, scrollPercentRounded, ["rovers_text"], 92, 98)
+  showAndHide(dataObj, scrollPercentRounded, ["rovers_text"], 92, 95)
+  showAndHide(dataObj, scrollPercentRounded, ["rovers_text2"], 95, 98)
 
   if ((scrollPercentage * totalFrames) / 100 < totalFrames) {
     lottieProgress.goToAndStop((scrollPercentage * totalFrames) / 100, true);

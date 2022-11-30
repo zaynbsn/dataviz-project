@@ -50,7 +50,7 @@ const launchAnim = async (path, callback) => {
   })
   lottieProgress.addEventListener('data_ready', ()  => {
     for (const marker of lottieProgress.markers){
-      allMarkersPositions.push(marker.time * 5.67)
+      allMarkersPositions.push(marker.time * 5.8)
     }
     for (let i=0; i < navbarItems.length; i++){
       navbarItems[i].addEventListener('click', () => {
