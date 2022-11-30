@@ -1,4 +1,4 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide } from './utils.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide } from './utils.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -47,14 +47,9 @@ const launchAnim = async (path, callback) => {
     path: path
   })
 
-  lottieProgress.addEventListener('data_ready', ()  => {
+  lottieProgress.addEventListener('data_ready', async ()  => {
     const ratio = scrollbar.limit.y / lottieProgress.totalFrames
-    let count = 4
-    for (const marker of lottieProgress.markers){
-      console.log(count)
-      allMarkersPositions.push(marker.time * (ratio + count / 10))
-      count -= 0.50
-    }
+    allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
 
     for (let i=0; i < navbarItems.length; i++){
       navbarItems[i].addEventListener('click', () => {
@@ -62,7 +57,7 @@ const launchAnim = async (path, callback) => {
         scrollbar.scrollTo(0, allMarkersPositions[i], 5000)
         setTimeout(() => {
           isNavClicked = false
-        }, 6000)
+        }, 10000)
         let currentActive = document.querySelector(".is-active");
         currentActive.classList.remove("is-active")
         navbarItems[i].classList.add("is-active");

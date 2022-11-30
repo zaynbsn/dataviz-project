@@ -55,6 +55,16 @@ const selectAllDataDivs = (dataJson) => {
   return dataObj
 }
 
+const getRatioForNavigation = async (ratio, lottieProgress) => {
+  let allMarkersPositions = []
+  let count = 4
+    for (const marker of lottieProgress.markers){
+      allMarkersPositions.push(marker.time * (ratio + count / 10))
+      count -= 0.50
+    }
+    return allMarkersPositions
+}
+
 const changeNavBarActive = (currentFrame, markers, index, navbarItems) => {
   if(markers[index+1]){
     if(currentFrame >= markers[index].time-50 && currentFrame <= (markers[index+1].time -50)){
@@ -100,4 +110,4 @@ const randomPercentage = (min, max) => {
 }
 
 
-export { getDataJson, appendNavbar, appendData, selectAllDataDivs, changeNavBarActive, showAndHide, getRandomCoordinate }
+export { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, getRandomCoordinate }

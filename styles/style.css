@@ -31,7 +31,7 @@ body{
   background-color: rgba(255, 255, 255, 0.4);
   /* background-color: rgba(121, 51, 195, 0.7); */
   /* background-color: rgba(95, 95, 201, 0.7); */
-  box-shadow: 0 0 51px 2000px black, 0 0 190px 375px black inset;
+  box-shadow: 0 0 51px 2000px black, 0 0 180px 320px black inset;
   position: absolute;
   z-index: 10;
   pointer-events: none;
