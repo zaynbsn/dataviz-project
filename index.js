@@ -83,9 +83,8 @@ const continueCallback = () => {
   const rightDialogue = dialogueJson.find(dialogue => {
     if(dialogue.state === fsm.state) return dialogue
   })
-  
   if(count < rightDialogue.texts.length){
-    if(fsm.state === 'start'){
+    if(fsm.state === 'storyStart'){
       const svgContainer = document.querySelector(".svg-container")
       if(count === 4){
         svgContainer.style.zIndex = 13

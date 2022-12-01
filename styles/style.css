@@ -167,7 +167,7 @@ body{
   color: white;
   font-family: "Helvetica";
   font-weight: 400;
-  font-size: 2vh;
+  font-size: 2.2vh;
   /* border: 1px solid red; */
 }
 .click-to-continue{
@@ -176,7 +176,7 @@ body{
   bottom: 2vh;
   color: rgba(255,255,255,0.6);
   font-family: "Helvetica";
-  font-size: 1.3vh;
+  font-size: 1.5vh;
   z-index: 101;
   /* border: 1px solid red; */
 }

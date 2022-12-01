@@ -1,8 +1,13 @@
+:root{
+  --astrodex-height: 60vh;
+  --astrodex-width: 60vw;
+}
+
 .astrodex{
   position: absolute;
   width: auto;
-  height: 50vh;
-  top: calc(50% - 25vh);
+  height: var(--astrodex-height);
+  top: calc(50% - var(--astrodex-height) / 2);
   right: 0;
   z-index: 11;
   display: block;
@@ -25,15 +30,16 @@
   z-index: 13;
   /* border: 1px solid red; */
 }
+
 .astrodex-modal{
-  width: 50vw;
-  height: 50vh;
+  width: var(--astrodex-width);
+  height: var(--astrodex-height);
   background-image: url('../static/opened-astrodex.svg');
-  background-size: 50vw 50vh;
+  background-size: var(--astrodex-width) var(--astrodex-height);
   background-repeat: no-repeat;
   display: none;
   position: absolute;
-  top: calc(50% - 25vh);
+  top: calc(50% - var(--astrodex-height) / 2);
   right: 0;
   z-index: 13;
   /* border: 1px solid red; */
@@ -63,7 +69,7 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  margin-left: 48px;
+  margin-left: 6vh;
   /* border: 1px solid red; */
 }
 .title{
