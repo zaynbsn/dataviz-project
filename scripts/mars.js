@@ -48,6 +48,7 @@ const launchAnim = async (path, callback) => {
   })
 
   lottieProgress.addEventListener('data_ready', async ()  => {
+    console.log(scrollbar)
     const ratio = scrollbar.limit.y / lottieProgress.totalFrames
     allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
 
@@ -123,6 +124,21 @@ const marsCallback = () => {
     return;
   }
 }
+const astrodex = document.querySelector(".astrodex");
+const astrodexModal = document.querySelector(".astrodex-modal");
+let isModalDisplayed = false
 
-launchAnim("./static/mars/mars-v-final.json", marsCallback)
+astrodex.addEventListener('click', e => {
+  swapAstrodexModal()
+})
+astrodexModal.addEventListener('click', e => {
+  swapAstrodexModal()
+})
+
+const swapAstrodexModal = () => {
+  isModalDisplayed = !isModalDisplayed;
+  astrodexModal.style.display = isModalDisplayed ? 'block' : 'none';
+  astrodex.style.display = isModalDisplayed ? 'none' : 'block';
+}
+launchAnim("./static/mars/mars-v-final2.json", marsCallback)
 

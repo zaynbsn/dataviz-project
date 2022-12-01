@@ -108,4 +108,4 @@ const moonCallback = () => {
     return;
   }
 }
-launchAnim("./static/moon/moon-v1.json", moonCallback)
+launchAnim("./static/moon/moon-v-final.json", moonCallback)
