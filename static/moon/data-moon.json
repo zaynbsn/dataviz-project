@@ -13,7 +13,7 @@
               }, 
 
   "first_step_dates" : {"value": "1969", "x": "83%", "y": "47%", "size": "2.25vw", "color": "black"},
-  "first_step_text" : {"value": "La première fois que l’Homme a posé le pied sur la Lune était en 1969 !",
+  "first_step_text" : {"value": "La première fois que l’Homme a posé le pied sur la Lune était en juillet 1969 !",
                       "x": "47%", "y": "35%", "size": "1.2vw", "color": "white"
                     },
   "missions_text" : {"value": "Il y a eu au total 6 missions réussis qui ont permis à l’Homme d’explorer la Lune. ",
