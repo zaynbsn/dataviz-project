@@ -25,10 +25,10 @@
         "icon": "./static/icons/diameter.svg",
         "select": "Knockback",
         "options": [
-          "6 792km.",
+          "6 792km",
           "12 742km"
         ],
-        "valid_answer": "6 792km.",
+        "valid_answer": "6 792km",
         "user_response": "",
         "is_user_response_valid": false
       }
@@ -66,7 +66,7 @@
           "9 mois",
           "12 mois"
         ],
-        "valid_answer": "9 mois",
+        "valid_answer": "6 mois",
         "user_response": "",
         "is_user_response_valid": false
       }
@@ -80,7 +80,7 @@
         "icon": "./static/icons/diameter.svg",
         "select": "Efficiency",
         "options": [
-          "un",
+          "une",
           "deux",
           "trois"
         ],
@@ -161,7 +161,7 @@
         "icon": "./static/icons/diameter.svg",
         "select": "Curse of Binding",
         "options": [
-          "-145°C",
+          "-140°C",
           "-165°C",
           "-185°C"
         ],

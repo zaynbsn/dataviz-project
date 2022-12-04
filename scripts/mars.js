@@ -1,4 +1,5 @@
 import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, appendStaticAstrodexInfos } from './utils.js'
+import { quizzSetup, appendQuizzContent } from './quizz.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -126,55 +127,10 @@ const marsCallback = () => {
 
 // QUIZZ
 let quizzDataJson = await getDataJson("./static/mars/quizz-mars.json")
-console.log(quizzDataJson)
-
-const quizz = document.querySelector('.quizz')
-
-
+quizzSetup(quizzDataJson)
 appendStaticAstrodexInfos("Mars", "./static/Mars.svg")
-
-
-const appendQuizzContent = (quizzDataJson, index) => {
-  quizz.innerHTML = ""
-  const quizzObj = quizzDataJson[index].data
-  for(const sentence of quizzObj){
-    let options = ''
-    for (const option of sentence.options){
-      options +=  `<option value="${option}" class="hel-font">${option}</option>`
-    }
-    let div = document.createElement("p")
-    div.innerHTML = `${sentence.body_before}
-                        <select class="select minecraft-font">
-                          <option value="corrupted" class="minecraft-font">${sentence.select}</option>
-                          ${options}
-                        </select>
-                        ${sentence.body_after}`
-    
-    quizz.appendChild(div)
-  }
-  const selects = document.querySelectorAll('.select')
-  selects.forEach(select => {
-    select.addEventListener('change', (event) => {
-      if(event.target.value === 'corrupted'){
-        select.classList.add('minecraft-font')
-      }else{
-        select.classList.remove('minecraft-font')
-      }
-    });
-  })
-  
-
-  previous.addEventListener('click', () => {
-    appendQuizzContent(quizzDataJson, index-1)
-  })
-  next.addEventListener('click', () => {
-    appendQuizzContent(quizzDataJson, index+1)
-  })
-}
-const previous = document.querySelector('.previous')
-const next = document.querySelector('.next')
-
 appendQuizzContent(quizzDataJson, 0)
 
+// ANIM LAUNCH
 launchAnim("./static/mars/mars-v-final2.json", marsCallback)
 

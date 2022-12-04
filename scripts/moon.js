@@ -1,4 +1,5 @@
 import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, appendStaticAstrodexInfos } from './utils.js'
+import { quizzSetup, appendQuizzContent } from './quizz.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -111,50 +112,8 @@ const moonCallback = () => {
 
 // QUIZZ
 let quizzDataJson = await getDataJson("./static/moon/quizz-moon.json")
-console.log(quizzDataJson)
-
-const quizz = document.querySelector('.quizz')
-const previous = document.querySelector('.previous')
-const next = document.querySelector('.next')
-
+quizzSetup(quizzDataJson)
 appendStaticAstrodexInfos("La Lune", "./static/Moon.svg")
-
-const appendQuizzContent = (quizzDataJson, index) => {
-  quizz.innerHTML = ""
-  const quizzObj = quizzDataJson[index].data
-  for(const sentence of quizzObj){
-    let options = ''
-    for (const option of sentence.options){
-      options +=  `<option value="${option}" class="hel-font">${option}</option>`
-    }
-    let div = document.createElement("p")
-    div.innerHTML = `${sentence.body_before}
-                        <select class="select minecraft-font">
-                          <option value="corrupted" class="minecraft-font">${sentence.select}</option>
-                          ${options}
-                        </select>
-                        ${sentence.body_after}`
-    
-    quizz.appendChild(div)
-  }
-  const selects = document.querySelectorAll('.select')
-  selects.forEach(select => {
-    select.addEventListener('change', (event) => {
-      if(event.target.value === 'corrupted'){
-        select.classList.add('minecraft-font')
-      }else{
-        select.classList.remove('minecraft-font')
-      }
-    });
-  })
-  previous.addEventListener('click', () => {
-    appendQuizzContent(quizzDataJson, index-1)
-  })
-  next.addEventListener('click', () => {
-    appendQuizzContent(quizzDataJson, index+1)
-  })
-}
-
 appendQuizzContent(quizzDataJson, 0)
 
 launchAnim("./static/moon/moon-v-final.json", moonCallback)

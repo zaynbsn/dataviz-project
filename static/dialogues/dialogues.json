@@ -26,15 +26,15 @@
     "texts" : [
         "Super, tu as retrouvé toutes les données de la LUNE !",
         "Tu peux à tout moment consulter l’Astrodex pour revoir les données de la LUNE.",
-        "Mais ne perdons pas de temps, partons à la recherche de la planète Station Spatiale Internationnale (ISS) !"
+        "Mais ne perdons pas de temps, partons à la recherche de la planète Station Spatiale Internationale (ISS) !"
     ]
   },
   {
     "state": "issExp",
     "id": 0,
     "texts" : [
-        "Super, tu as retrouvé toutes les données de la Station Spatiale Internationnale (ISS) !",
-        "Tu peux à tout moment consulter l’Astrodex pour revoir les données de la Station Spatiale Internationnale (ISS)",
+        "Super, tu as retrouvé toutes les données de la Station Spatiale Internationale (ISS) !",
+        "Tu peux à tout moment consulter l’Astrodex pour revoir les données de la Station Spatiale Internationale (ISS)",
         "Mais ne perdons pas de temps, partons à la recherche de la MARS !"
     ]
   },
