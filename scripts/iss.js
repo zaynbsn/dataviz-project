@@ -18,13 +18,13 @@ for (const item in marsNavData){
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = '/static/mars/data-mars.json'
-let marsDataJson = await getDataJson(url)
+const url = '/static/iss/data-iss.json'
+let issDataJson = await getDataJson(url)
 
 
 // append data from json in dom
-for(const data in marsDataJson){
-  appendData(data, marsDataJson, mainContainer)
+for(const data in issDataJson){
+  appendData(data, issDataJson, mainContainer)
 }
 
 let scrollbar
@@ -32,7 +32,7 @@ let lottieProgress
 let allMarkersPositions = []
 let isNavClicked = false
 let navbarItems = document.querySelectorAll(".navbar-item")
-let dataObj = selectAllDataDivs(marsDataJson)
+let dataObj = selectAllDataDivs(issDataJson)
 
 const launchAnim = async (path, callback) => {
 
@@ -64,7 +64,7 @@ const launchAnim = async (path, callback) => {
     //   })
     // }
     // scrollbar.scrollTo(0, allMarkersPositions[0], 2000) 
-    scrollbar.scrollTo(0, 1200, 3000) 
+    scrollbar.scrollTo(0, 1200, 1000) 
     scrollbar.addListener(callback)
   })
 }
@@ -77,46 +77,24 @@ const issCallback = () => {
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
 
+  console.log(scrollPercentRounded)
   // if(!isNavClicked){
   //   for(let i=0; i < 9 ; i++){
   //   changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
   //   }
   // }
   
-  // showAndHide(dataObj, scrollPercentRounded, ["mars_intro_text"], 4, 8)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date_text"], 12, 24)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date1"], 12, 43)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date2"], 25, 43)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date3"], 35, 43)
 
-  // // mars diameter
-  // showAndHide(dataObj, scrollPercentRounded, ["mars_diameter", "earth_diameter", "diameter_text"], 11, 15)
+
+  showAndHide(dataObj, scrollPercentRounded, ["dist_earth_iss", "dist_earth_iss_text"], 48, 57)
   
-  // //mars and earth mass
-  // showAndHide(dataObj, scrollPercentRounded, ["mass_text"], 18, 23)
-  // // showAndHide(dataObj, scrollPercentRounded, ["mars_mass", "earth_mass", "mass_text"], 18, 23)
-  // showAndHide(dataObj, scrollPercentRounded, ["mars_mass9", "earth_mass9"], 23, 26)
+  showAndHide(dataObj, scrollPercentRounded, ["rotation_duration", "rotation_duration_text"], 62, 79)
   
-  // //flight duration
-  // showAndHide(dataObj, scrollPercentRounded, ["flight_duration", "duration_text"], 30, 35)
-  
-  // //rotation
-  // showAndHide(dataObj, scrollPercentRounded, ["mars_rotat", "earth_rotat", "rotation_text"], 35, 40)
-  
-  // //moons
-  // showAndHide(dataObj, scrollPercentRounded, ["phobos", "deimos", "moon", "moons_text"], 41, 46)
-  
-  // //earth rotation
-  // showAndHide(dataObj, scrollPercentRounded, ["place_ss_text"], 54, 57)
-  // showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text"], 57, 61)
-  // showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text2"], 61, 65)
-  // showAndHide(dataObj, scrollPercentRounded, ["solar_rotation_text3"], 65, 69)
-  
-  // //temp
-  // showAndHide(dataObj, scrollPercentRounded, ["temp_text"], 74, 77)
-  // showAndHide(dataObj, scrollPercentRounded, ["temp_text2"], 77, 80)
-  // showAndHide(dataObj, scrollPercentRounded, ["temp_text4"], 80, 82)
-  // showAndHide(dataObj, scrollPercentRounded, ["temp_moy", "temp_max", "temp_min"], 84, 89)
-  
-  // //rovers
-  // showAndHide(dataObj, scrollPercentRounded, ["rovers_text"], 92, 95)
-  // showAndHide(dataObj, scrollPercentRounded, ["rovers_text2"], 95, 98)
+  showAndHide(dataObj, scrollPercentRounded, ["duration_earth_iss", "duration_earth_iss_text"], 80, 99)
 
   if ((scrollPercentage * totalFrames) / 100 < totalFrames) {
     lottieProgress.goToAndStop((scrollPercentage * totalFrames) / 100, true);
