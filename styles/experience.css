@@ -165,7 +165,7 @@ canvas{
 .quizz-title h1{
   color: #ECE9FF;
   font-family: 'Helvetica';
-  font-size: 2rem;
+  font-size: 4vh;
   font-weight: 900;
 }
 .quizz{
@@ -173,6 +173,12 @@ canvas{
   height: 80%;
   margin-left: 20%;
   /* border: 1px solid red; */
+}
+.quizz p{
+  margin-top: 5vh;
+  color: white;
+  font-size: 2.5vh;
+  font-family: 'Helvetica';
 }
 select{
   height: 30px;
@@ -220,12 +226,7 @@ select:focus-visible{
   width: 35%!important;
   height: auto!important;
 }
-.quizz p{
-  margin-top: 5vh;
-  color: white;
-  font-size: 1.4rem;
-  font-family: 'Helvetica';
-}
+
 
 .minecraft-font{
   font-family: 'minecraft';
