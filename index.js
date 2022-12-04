@@ -1,5 +1,4 @@
-import { getDataJson, getRandomCoordinate, swapAstrodexModal
- } from './scripts/utils.js'
+import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './scripts/utils.js'
 
 // curseur
 const circle=document.querySelector("#night");
@@ -122,11 +121,13 @@ let fsm = new StateMachine({
     { name: 'storyStarting',     from: 'start',  to: 'storyStart' },
     { name: 'hoveringMoon',     from: 'storyStart',  to: 'hoverMoon' },
     { name: 'moonDiscovered',   from: 'start', to: 'moonExp'  },
+    { name: 'issDiscovered',   from: 'start', to: 'issExp'  },
     { name: 'marsDiscovered', from: 'start',    to: 'marsExp' },
   ],
   methods: {
     onAfterStoryStarting: function() {storyTelling()},
     onAfterMoonDiscovered:   function() { storyTelling()},
+    onAfterIssDiscovered:   function() { storyTelling()},
     onAfterMarsDiscovered:   function() { storyTelling()},
   }
 });
@@ -176,9 +177,11 @@ if(svgMoon){
 
 const allDiscovered = experiencesDataJson.filter(exp => exp.discovered === true)
 const isLastDiscovered = allDiscovered[allDiscovered.length-1]
+console.log(isLastDiscovered)
 
 if(isLastDiscovered){
   if(isLastDiscovered.name === 'moon') fsm.moonDiscovered()
+  if(isLastDiscovered.name === 'iss')fsm.issDiscovered()
   if(isLastDiscovered.name === 'mars')fsm.marsDiscovered()
 }else{
   fsm.storyStarting()

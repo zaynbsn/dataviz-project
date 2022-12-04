@@ -157,14 +157,29 @@ canvas{
   /* border: 1px solid red; */
   z-index: 100;
 }
+.quizz-title{
+  width: 80%;
+  height: 10%;
+  margin-left: 20%;
+}
+.quizz-title h1{
+  color: #ECE9FF;
+  font-family: 'Helvetica';
+  font-size: 2rem;
+  font-weight: 900;
+}
 .quizz{
-  width: 90%;
+  width: 80%;
   height: 80%;
   margin-left: 20%;
   /* border: 1px solid red; */
 }
 select{
   height: 30px;
+  border-radius: 516px;
+}
+select:focus-visible{
+  border: none;
 }
 
 .manage-quizz{
@@ -176,13 +191,26 @@ select{
 .manage-quizz button{
   position: relative;
   bottom: 0;
+  padding: 8px 16px 8px 16px;
+  color: #ECE9FF;
+  min-width: 96px;
+  background-color: transparent;
+  border: 2px solid #ECE9FF;
+  border-radius: 512px;
+  text-align: center;
+  margin-left: 8px;
+}
+.manage-quizz button:hover{
+  color: #0A0C30;
+  background-color: #ECE9FF;
+  transition: 0.3s;
 }
 
 .illustration-quizz{
   width: 50%;
   height: 70%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /* border: 1px solid red; */
@@ -198,6 +226,7 @@ select{
   font-size: 1.4rem;
   font-family: 'Helvetica';
 }
+
 .minecraft-font{
   font-family: 'minecraft';
 }

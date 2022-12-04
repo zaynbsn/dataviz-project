@@ -1,4 +1,4 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide } from './utils.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, appendStaticAstrodexInfos } from './utils.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -116,6 +116,8 @@ console.log(quizzDataJson)
 const quizz = document.querySelector('.quizz')
 const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
+
+appendStaticAstrodexInfos("La Lune", "./static/Moon.svg")
 
 const appendQuizzContent = (quizzDataJson, index) => {
   quizz.innerHTML = ""

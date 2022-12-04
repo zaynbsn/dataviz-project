@@ -106,6 +106,17 @@ const swapAstrodexModal = (isModalDisplayed, astrodexModal, astrodex) => {
   return isModalDisplayed
 }
 
+const appendStaticAstrodexInfos = (name, svgPath) => {
+  // quizz static img
+  const moonSvg = document.querySelector('.exp-svg')
+  moonSvg.src = svgPath
+
+  // title quizz
+  const titleQuizz = document.querySelector('.quizz-title')
+  let div = document.createElement("p")
+  div.innerHTML = `<h1>${name}</h1>`
+  titleQuizz.appendChild(div)
+}
 const getRandomCoordinate = () => {
   const top = `${randomPercentage(0.05, 0.6)}%`
   const right = `${randomPercentage(0.1, 0.6)}%`
@@ -117,4 +128,4 @@ const randomPercentage = (min, max) => {
 }
 
 
-export { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, getRandomCoordinate, swapAstrodexModal }
+export { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, getRandomCoordinate, swapAstrodexModal, appendStaticAstrodexInfos }

@@ -12,6 +12,18 @@
     "button_text_color": "#ECE9FF"
   },
   {
+    "name": "iss",
+    "discovered": false,
+    "asset": "./static/ISS.svg",
+    "link_to": "/iss.html",
+    "bg_color": "#cdc6f4",
+    "second_layer_color": "#529BFD",
+    "third_layer_color": "#81EFEE",
+    "title_color": "#529BFD",
+    "button_bg_color": "#529BFD",
+    "button_text_color": "#ECE9FF"
+  },
+  {
     "name": "mars",
     "discovered": false,
     "asset": "./static/Mars.svg",
@@ -23,4 +35,5 @@
     "button_bg_color": "#B43D52",
     "button_text_color": "#ECE9FF"
   }
+  
 ]
