@@ -72,14 +72,18 @@ const appendQuizzContent = (quizzDataJson, index) => {
   const next = document.querySelector('.next')
   
   if(quizzDataJson[index - 1]){
-    if(previous.style.display = 'none') previous.style.display = 'block'
+    previous.removeAttribute('disabled')
+    previous.style.opacity = '1'
   }else{
-    previous.style.display = 'none'
+    previous.setAttribute('disabled', '')
+    previous.style.opacity = '0.3'
   }
   if(quizzDataJson[index + 1]){
-    if(next.style.display = 'none') next.style.display = 'block'
+    next.removeAttribute('disabled')
+    next.style.opacity = '1'
   }else{
-    next.style.display = 'none'
+    next.setAttribute('disabled', '')
+    next.style.opacity = '0.3'
   }
 }
 

@@ -108,8 +108,8 @@ const swapAstrodexModal = (isModalDisplayed, astrodexModal, astrodex) => {
 
 const appendStaticAstrodexInfos = (name, svgPath) => {
   // quizz static img
-  const moonSvg = document.querySelector('.exp-svg')
-  moonSvg.src = svgPath
+  // const moonSvg = document.querySelector('.exp-svg')
+  // moonSvg.src = svgPath
 
   // title quizz
   const titleQuizz = document.querySelector('.quizz-title')

@@ -116,4 +116,4 @@ quizzSetup(quizzDataJson)
 appendStaticAstrodexInfos("La Lune", "./static/Moon.svg")
 appendQuizzContent(quizzDataJson, 0)
 
-launchAnim("./static/moon/moon-v-final.json", moonCallback)
+launchAnim("./static/moon/moon-v-final2.json", moonCallback)
