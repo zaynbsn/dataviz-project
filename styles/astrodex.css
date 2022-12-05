@@ -82,7 +82,7 @@
 .text{
   width: 100%;
   height: 80%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-left: 1rem;
   /* border: 1px solid blue; */
 }
@@ -150,7 +150,7 @@
   height: fit-content;
   font-weight: bolder;
   font-size: 0.6rem;
-  padding: 0.5rem 1.1rem;
+  padding: 0.5rem 1.4rem;
   border: none;
   border-radius: 512px;
   cursor: pointer;
@@ -165,7 +165,7 @@
   /* margin-left: 20%; */
   /* border: 1px solid red; */
 }
-.manage-quizz button, .quizz-content button{
+.manage-quizz button, .quizz-content button, .illustration-quizz button{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,6 +178,10 @@
   text-align: center;
   margin-right: 8px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.illustration-quizz button{
+  width: 176px!important;
 }
 
 .close, .return{
@@ -197,22 +201,23 @@
 .previous:hover, .next:hover{
   color: #0A0C30;
   background-color: #ECE9FF;
-  transition: 0.3s;
+  transition: 0.4s;
 }
-.previous, .next{
+.previous, .next {
   color: #ECE9FF;
   background-color: transparent;
   border: 2px solid #ECE9FF;
 }
-.validate{
+.validate, .anim-button, .download {
   margin-left: 16px;
   background-color: #ECE9FF;
   color: #0A0C30;
   border: 2px solid #ECE9FF;
 }
-.validate:hover{
-  font-weight: bolder;
-  transition: 0.3s;
+.validate:hover, .anim-button:hover, .download:hover{
+  color: #ECE9FF;
+  background-color: transparent;
+  transition: 0.4s;
 }
 .succeed{
   background-color: green!important;
@@ -223,4 +228,7 @@
   background-color: #B43D52!important;
   border-color: #B43D52!important;
   color: #ECE9FF;
+}
+a{
+  text-decoration: none;
 }
