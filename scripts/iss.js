@@ -8,12 +8,12 @@ if(localStorage.getItem("experiencesDataJson")){
 experiencesDataJson[1].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
 
-let marsNavData = await getDataJson('/static/mars/nav-mars.json')
+let issNavData = await getDataJson('/static/iss/nav-iss.json')
 const navContainer = document.querySelector(".navbar")
 
 
-for (const item in marsNavData){
-  appendNavbar(item, marsNavData, navContainer)
+for (const item in issNavData){
+  appendNavbar(item, issNavData, navContainer)
 }
 
 const mainContainer = document.getElementById("myData")
@@ -49,23 +49,27 @@ const launchAnim = async (path, callback) => {
   })
 
   lottieProgress.addEventListener('data_ready', async ()  => {
+    console.log(lottieProgress.totalFrames)
+    console.log(scrollbar.limit.y)
     const ratio = scrollbar.limit.y / lottieProgress.totalFrames
-    // allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
+    console.log(ratio)
+    allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
+    console.log(allMarkersPositions)
 
-    // for (let i=0; i < navbarItems.length; i++){
-    //   navbarItems[i].addEventListener('click', () => {
-    //     isNavClicked = true
-    //     scrollbar.scrollTo(0, allMarkersPositions[i], 5000)
-    //     setTimeout(() => {
-    //       isNavClicked = false
-    //     }, 10000)
-    //     let currentActive = document.querySelector(".is-active");
-    //     currentActive.classList.remove("is-active")
-    //     navbarItems[i].classList.add("is-active");
-    //   })
-    // }
-    // scrollbar.scrollTo(0, allMarkersPositions[0], 2000) 
-    scrollbar.scrollTo(0, 1200, 1000) 
+    for (let i=0; i < navbarItems.length; i++){
+      navbarItems[i].addEventListener('click', () => {
+        isNavClicked = true
+        scrollbar.scrollTo(0, allMarkersPositions[i], 5000)
+        setTimeout(() => {
+          isNavClicked = false
+        }, 10000)
+        let currentActive = document.querySelector(".is-active");
+        currentActive.classList.remove("is-active")
+        navbarItems[i].classList.add("is-active");
+      })
+    }
+    scrollbar.scrollTo(0, allMarkersPositions[0], 2000) 
+    // scrollbar.scrollTo(0, 1200, 1000) 
     scrollbar.addListener(callback)
   })
 }
@@ -77,13 +81,13 @@ const issCallback = () => {
   let currentFrame = lottieProgress.currentFrame
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
+  // console.log(scrollPercentRounded)
 
-  console.log(scrollPercentRounded)
-  // if(!isNavClicked){
-  //   for(let i=0; i < 9 ; i++){
-  //   changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
-  //   }
-  // }
+  if(!isNavClicked){
+    for(let i=0; i < 5; i++){
+    changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
+    }
+  }
   
   showAndHide(dataObj, scrollPercentRounded, ["build_date_text"], 12, 24)
   showAndHide(dataObj, scrollPercentRounded, ["build_date1"], 12, 43)
@@ -110,5 +114,5 @@ quizzSetup(quizzDataJson)
 appendStaticAstrodexInfos("ISS", "./static/ISS.svg")
 appendQuizzContent(quizzDataJson, 0)
 
-launchAnim("./static/iss/iss-v1.json", issCallback)
+launchAnim("./static/iss/iss-v-final.json", issCallback)
 
