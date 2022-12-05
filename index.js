@@ -58,14 +58,21 @@ if(expToDiscover){
     let div = document.createElement("div")
 
     const coordinate = getRandomCoordinate()
+    
     for (const tuple of coordinatesArray){
-      while(tuple[0]-3 <= coordinate[0] && coordinate[0] <= tuple[0]+3 && tuple[1]-3 <= coordinate[1] && coordinate[1] <= tuple[1]+3){
+      while(tuple[0]-5 <= coordinate[0] && coordinate[0] <= tuple[0]+5
+        && tuple[1]-5 <= coordinate[1] && coordinate[1] <= tuple[1]+5
+        ){
         coordinate = getRandomCoordinate()
       }
     }
     coordinatesArray.push(coordinate)
-    div.style.top = coordinate[0]
-    div.style.right = coordinate[1]
+    // div.style.top = coordinate[0] + '%'
+    // div.style.right = coordinate[1] + '%'
+    const number = 20 * coordinatesArray.length
+    div.style.top = number + '%'
+    div.style.right = number + '%'
+
     div.style.position = 'absolute'
     div.innerHTML = `<a href="${exp.link_to}">
                       <img src="${exp.asset}" class="svg-${exp.name}" />
