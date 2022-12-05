@@ -1,7 +1,7 @@
 [
   {
     "name": "moon",
-    "trad": "La Lune",
+    "trad": "Lune",
     "discovered": false,
     "asset": "./static/Moon.svg",
     "quizz_url_path": "./static/moon/quizz-moon.json",
