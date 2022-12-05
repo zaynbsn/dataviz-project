@@ -53,7 +53,7 @@ if(experiences){
       let quizzDataJson = await getDataJson(experience.quizz_url_path)
       discoveredButton.addEventListener('click', () => {
         appendResumeContent(quizzDataJson, 0, experience.trad, experience.asset)
-        appendStaticAstrodexInfos( experience.trad, experience.asset)
+        appendStaticAstrodexInfos(experience.trad, experience.asset, experience.link_to, experience.summary)
         resumeSetup(quizzDataJson)
       })
     }else{

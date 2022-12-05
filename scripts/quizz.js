@@ -1,4 +1,4 @@
-const appendStaticAstrodexInfos = (name, svgPath) => {
+const appendStaticAstrodexInfos = (name, svgPath, pageUrl, downloadLink) => {
   // quizz static img
   const expSvg = document.querySelector('.exp-svg')
   if(expSvg) expSvg.src = svgPath
@@ -6,6 +6,15 @@ const appendStaticAstrodexInfos = (name, svgPath) => {
   // title quizz
   const titleQuizz = document.querySelector('.quizz-title')
   titleQuizz.innerHTML = `<h1>${name}</h1>`
+
+  // view anim
+  const animButtonLink = document.querySelector(".anim-button-link")
+
+  if(animButtonLink) animButtonLink.href = pageUrl
+
+  // download
+  const download = document.querySelector(".download-link")
+  if(download) download.href = downloadLink
 }
 
 const quizzSetup = (quizzDataJson) => {
