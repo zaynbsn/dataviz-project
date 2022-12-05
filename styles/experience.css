@@ -95,9 +95,6 @@ canvas{
   width: 100%;
   height: auto;
 }
-.navbar-icons img:hover{
-  color: red; 
-}
 .rotate45{
   transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -150,7 +147,7 @@ canvas{
   border-radius: 512px;
 }
 .quizz-content{
-  width: 50%;
+  width: 80%;
   height: 70%;
   display: flex;
   flex-direction: column;
@@ -160,7 +157,7 @@ canvas{
 .quizz-title{
   width: 80%;
   height: 10%;
-  margin-left: 20%;
+  /* margin-left: 20%; */
 }
 .quizz-title h1{
   color: #ECE9FF;
@@ -171,7 +168,7 @@ canvas{
 .quizz{
   width: 80%;
   height: 80%;
-  margin-left: 20%;
+  /* margin-left: 20%; */
   /* border: 1px solid red; */
 }
 .quizz p{
@@ -189,46 +186,10 @@ select{
   border-radius: 516px;
   text-align-last: center;
   font-size: 2vh;
+  cursor: pointer;
 }
 select:focus-visible{
   border: none;
-}
-
-.manage-quizz{
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  height: 10%;
-  margin-left: 20%;
-  /* border: 1px solid red; */
-}
-.manage-quizz button{
-  display: block;
-  position: relative;
-  bottom: 0;
-  padding: 8px 16px 8px 16px;
-  color: #ECE9FF;
-  min-width: 96px;
-  max-height: 35px;
-  background-color: transparent;
-  border: 2px solid #ECE9FF;
-  border-radius: 512px;
-  text-align: center;
-  margin-left: 8px;
-}
-.manage-quizz button:hover{
-  color: #0A0C30;
-  background-color: #ECE9FF;
-  transition: 0.3s;
-}
-
-.succeed{
-  background-color: green!important;
-  border-color: green!important;
-}
-.failed{
-  background-color: red!important;
-  border-color: red!important;
 }
 
 .illustration-quizz{
@@ -238,7 +199,6 @@ select:focus-visible{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 1px solid red; */
   font-family: 'Helvetica';
 }
 .illustration-quizz img{

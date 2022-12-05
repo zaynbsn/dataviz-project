@@ -8,17 +8,18 @@ if(localStorage.getItem("experiencesDataJson")){
 
 const astrodex = document.querySelector(".astrodex");
 const astrodexModal = document.querySelector(".astrodex-modal");
+const close = document.querySelector(".close");
 let isModalDisplayed = false
 
 astrodex.addEventListener('click', e => {
   isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+  
 })
-// astrodexModal.addEventListener('click', e => {
-//   isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
-// })
+close.addEventListener('click', e => {
+  isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+})
 
 // CONTENT
-
 const experiences = document.querySelector(".experiences")
 
 if(experiences){
