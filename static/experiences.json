@@ -16,11 +16,11 @@
     "discovered": false,
     "asset": "./static/ISS.svg",
     "link_to": "/iss.html",
-    "bg_color": "#cdc6f4",
-    "second_layer_color": "#529BFD",
-    "third_layer_color": "#81EFEE",
-    "title_color": "#529BFD",
-    "button_bg_color": "#529BFD",
+    "bg_color": "#F0EEFB",
+    "second_layer_color": "#D2CBF4",
+    "third_layer_color": "#AAA3F5",
+    "title_color": "#5546EE",
+    "button_bg_color": "#5546EE",
     "button_text_color": "#ECE9FF"
   },
   {
