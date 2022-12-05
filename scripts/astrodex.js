@@ -1,4 +1,5 @@
 import { getDataJson, swapAstrodexModal } from './utils.js'
+import { appendStaticAstrodexInfos, resumeSetup, appendResumeContent } from './quizz.js'
 
 // MODAL
 let experiencesDataJson = await getDataJson("./static/experiences.json")
@@ -33,9 +34,7 @@ if(experiences){
                         <div class="third-layer third-layer-${experience.name}"></div>
                         <img src="${experience.asset}"/>
                         <div style="z-index: 11; font-weight: 900;">${experience.name.charAt(0).toUpperCase() + experience.name.slice(1)}</div>
-                        <a href="${experience.link_to}" style="z-index: 11;">
-                          <button class="discovered-button ${experience.name}-button">Inspecter</button>
-                        </a>
+                        <button class="discovered-button ${experience.name}-button">Inspecter</button>
                       </div>`
       experiences.appendChild(div)
       const discovered = document.querySelector(`.${experience.name}`)
@@ -49,6 +48,14 @@ if(experiences){
       discoveredButton.style.color = experience.button_text_color
       secondLayer.style.backgroundColor = experience.second_layer_color
       thirdLayer.style.backgroundColor = experience.third_layer_color
+
+      
+      let quizzDataJson = await getDataJson(experience.quizz_url_path)
+      discoveredButton.addEventListener('click', () => {
+        appendResumeContent(quizzDataJson, 0, experience.trad, experience.asset)
+        appendStaticAstrodexInfos( experience.trad, experience.asset)
+        resumeSetup(quizzDataJson)
+      })
     }else{
       div.innerHTML = `<img src="./static/corrupted.svg"/>`
       experiences.appendChild(div)

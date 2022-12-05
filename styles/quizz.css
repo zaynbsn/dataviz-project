@@ -1,0 +1,68 @@
+.quizz-content{
+  width: 65%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  z-index: 100;
+}
+.quizz-title{
+  width: 80%;
+  height: 10%;
+  /* margin-left: 20%; */
+}
+.quizz-title h1{
+  color: #ECE9FF;
+  font-family: 'Helvetica';
+  font-size: 32px;
+  font-weight: bold;
+}
+.quizz{
+  width: 80%;
+  height: 80%;
+  /* margin-left: 20%; */
+  /* border: 1px solid red; */
+}
+.quizz p{
+  margin-top: 1vh;
+  color: white;
+  font-size: 2.5vh;
+  font-family: 'Helvetica';
+}
+.quizz p:first-child{
+  margin-top: 4vh;
+}
+select{
+  height: 30px;
+  width: fit-content;
+  border-radius: 516px;
+  text-align-last: center;
+  font-size: 2vh;
+  cursor: pointer;
+}
+select:focus-visible{
+  border: none;
+}
+
+.illustration-quizz{
+  width: 20%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Helvetica';
+  /* border: 1px solid red; */
+}
+.illustration-quizz img{
+  width: 100%!important;
+  height: auto!important;
+}
+
+
+.minecraft-font{
+  font-family: 'minecraft';
+}
+.hel-font{
+  font-family: 'Helvetica';
+}

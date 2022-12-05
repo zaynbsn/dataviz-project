@@ -154,12 +154,13 @@
   border: none;
   border-radius: 512px;
   cursor: pointer;
+  z-index: 11;
 }
 
 .manage-quizz{
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 50%;
   height: 10%;
   /* margin-left: 20%; */
   /* border: 1px solid red; */
@@ -171,7 +172,7 @@
   position: relative;
   bottom: 0;
   padding: 8px 16px 8px 16px;
-  min-width: 96px;
+  width: 96px;
   max-height: 30px;
   border-radius: 512px;
   text-align: center;
@@ -179,12 +180,7 @@
   cursor: pointer;
 }
 
-.previous:hover, .next:hover{
-  color: #0A0C30;
-  background-color: #ECE9FF;
-  transition: 0.3s;
-}
-.close{
+.close, .return{
   max-width: fit-content!important;
   min-width: fit-content!important;
   max-height: 30px;
@@ -194,8 +190,14 @@
   padding: 0 16px 0 16px;
   padding-left: 0!important;
 }
-.close:hover{
+.close:hover, .return:hover{
   color: #0A0C30;
+  transition: 0.3s;
+}
+.previous:hover, .next:hover{
+  color: #0A0C30;
+  background-color: #ECE9FF;
+  transition: 0.3s;
 }
 .previous, .next{
   color: #ECE9FF;
@@ -210,6 +212,7 @@
 }
 .validate:hover{
   font-weight: bolder;
+  transition: 0.3s;
 }
 .succeed{
   background-color: green!important;

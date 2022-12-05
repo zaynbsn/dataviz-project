@@ -1,8 +1,10 @@
 [
   {
     "name": "moon",
+    "trad": "La Lune",
     "discovered": false,
     "asset": "./static/Moon.svg",
+    "quizz_url_path": "./static/moon/quizz-moon.json",
     "link_to": "/moon.html",
     "bg_color": "#F6F6F9",
     "second_layer_color": "#DEDDE5",
@@ -13,8 +15,10 @@
   },
   {
     "name": "iss",
+    "trad": "ISS",
     "discovered": false,
     "asset": "./static/ISS.svg",
+    "quizz_url_path": "./static/iss/quizz-iss.json",
     "link_to": "/iss.html",
     "bg_color": "#F0EEFB",
     "second_layer_color": "#D2CBF4",
@@ -25,8 +29,10 @@
   },
   {
     "name": "mars",
+    "trad": "La Planète Mars",
     "discovered": false,
     "asset": "./static/Mars.svg",
+    "quizz_url_path": "./static/mars/quizz-mars.json",
     "link_to": "/mars.html",
     "bg_color": "#FFE0E3",
     "second_layer_color": "#FFC2C8",

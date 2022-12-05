@@ -1,5 +1,5 @@
-import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, appendStaticAstrodexInfos } from './utils.js'
-import { quizzSetup, appendQuizzContent } from './quizz.js'
+import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide } from './utils.js'
+import { appendStaticAstrodexInfos, quizzSetup, appendQuizzContent } from './quizz.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){

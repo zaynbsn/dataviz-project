@@ -177,7 +177,6 @@ if(svgMoon){
 
 const allDiscovered = experiencesDataJson.filter(exp => exp.discovered === true)
 const isLastDiscovered = allDiscovered[allDiscovered.length-1]
-console.log(isLastDiscovered)
 
 if(isLastDiscovered){
   if(isLastDiscovered.name === 'moon') fsm.moonDiscovered()
