@@ -1,0 +1,11 @@
+[
+  {
+    "state": "moonDialogue",
+    "id": 0,
+    "texts" : [
+        "Tu es arrivé sur la Lune ! Bravo !",
+        "Tu peux faire défiler l'écran avec la molette de ta souris, pour voir toute l'animation et découvrir les données.",
+        "Dans l'Astrodex, il y a maintenant un questionnaire sur les données de l'animation, n'hésite pas a cliquer dessus pour le remplir !"
+    ]
+  }
+]
