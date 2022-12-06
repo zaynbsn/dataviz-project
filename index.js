@@ -43,8 +43,8 @@ const expToDiscover = experiencesDataJson.find((exp) => exp.discovered === false
 if(expToDiscover){
   let div = document.createElement("div")
   const coordinate = getRandomCoordinate()
-  div.style.top = coordinate[0]
-  div.style.right = coordinate[1]
+  div.style.top = coordinate[0] + '%'
+  div.style.right = coordinate[1] + '%'
   div.style.position = 'absolute'
 
   div.innerHTML = `<a href="${expToDiscover.link_to}">
