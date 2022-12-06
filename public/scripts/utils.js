@@ -16,6 +16,7 @@ const appendNavbar = (item, dataJson, navContainer) => {
   div.classList.add("navbar-item")
   div.classList.add(item)
   if (item === 'mars') div.classList.add('is-active')
+  if (item === 'iss') div.classList.add('is-active')
   div.innerHTML =  `<div class="navbar-icons">
                       <img src="./static/icons/${item}.svg"/>
                     </div>

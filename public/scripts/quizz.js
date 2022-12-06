@@ -1,3 +1,6 @@
+const win = window.location.href.toString().split(window.location.host)[1]
+const subwin = win.substring(1, win.length)
+
 const appendStaticAstrodexInfos = async (name, svgPath, pageUrl, downloadLink) => {
   // quizz static img
   const expSvg = document.querySelector('.exp-svg')
@@ -38,6 +41,9 @@ const quizzSetup = async (quizzDataJson) => {
   })
   
   validate.addEventListener('click', () => {
+    if(localStorage.getItem(`quizzDataJson-${subwin}`)){
+      quizzDataJson = JSON.parse(localStorage.getItem(`quizzDataJson-${subwin}`))
+    }
     for (const res of quizzDataJson[globalIndex].data) {
       if (!res.is_user_response_valid){
         validate.classList.add('failed')
@@ -66,10 +72,18 @@ const resumeSetup = (quizzDataJson) => {
 }
 
 const appendQuizzContent = async (quizzDataJson, index) => {
+  const validatebtn = document.querySelector('.validate')
+  if(localStorage.getItem(`quizzDataJson-${subwin}`)){
+    quizzDataJson = JSON.parse(localStorage.getItem(`quizzDataJson-${subwin}`))
+  }
   const quizz = document.querySelector('.quizz')
   quizz.innerHTML = ""
-  const quizzObj = quizzDataJson[index].data
+  let quizzObj = quizzDataJson[index].data
   for(const sentence of quizzObj){
+    validatebtn.style.display = "flex"
+    if(sentence.is_user_response_valid){
+
+    }
     let options = ''
     for (const option of sentence.options){
       options +=  `<option value="${option}" class="hel-font">${option}</option>`
@@ -81,6 +95,11 @@ const appendQuizzContent = async (quizzDataJson, index) => {
                           ${options}
                         </select>
                         ${sentence.body_after}`
+
+    if(sentence.is_user_response_valid){
+      div.innerHTML = `${sentence.body_before} ${sentence.valid_answer} ${sentence.body_after}`
+      validatebtn.style.display = "none"
+    }
     quizz.appendChild(div)
 
     const selects = document.querySelectorAll('.select')
@@ -90,10 +109,12 @@ const appendQuizzContent = async (quizzDataJson, index) => {
           sentence.user_response = event.target.value
           sentence.user_response === sentence.valid_answer ? sentence.is_user_response_valid = true : sentence.is_user_response_valid = false
           select.classList.add('minecraft-font')
+          localStorage.setItem(`quizzDataJson-${subwin}`, JSON.stringify(quizzDataJson))
         }else{
           sentence.user_response = event.target.value
           sentence.user_response === sentence.valid_answer ? sentence.is_user_response_valid = true : sentence.is_user_response_valid = false
           select.classList.remove('minecraft-font')
+          localStorage.setItem(`quizzDataJson-${subwin}`, JSON.stringify(quizzDataJson))
         }
       });
     })
