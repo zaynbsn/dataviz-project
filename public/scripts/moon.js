@@ -129,7 +129,7 @@ const moonCallback = () => {
   }
   
   if(!isNavClicked){
-    for(let i=0; i < 7 ; i++){
+    for(let i=0; i < navbarItems.length ; i++){
       changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
     }
   }

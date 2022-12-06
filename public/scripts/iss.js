@@ -72,7 +72,7 @@ const launchAnim = async (path, callback) => {
       })
     }
     scrollbar.scrollTo(0, allMarkersPositions[0], 1000) 
-    // scrollbar.scrollTo(0, 1200, 1000) 
+    // scrollbar.scrollTo(0, 1200, 1000)
     scrollbar.addListener(callback)
   })
 }
@@ -95,10 +95,11 @@ const issCallback = () => {
   }
 
   if(!isNavClicked){
-    for(let i=0; i < 5; i++){
+    for(let i=0; i < navbarItems.length; i++){
     changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
     }
   }
+  
   showAndHide(dataObj, scrollPercentRounded, ["text_intro_name_iss"], 2, 12)
 
   showAndHide(dataObj, scrollPercentRounded, ["text_intro_iss"], 5, 9)
