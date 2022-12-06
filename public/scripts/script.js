@@ -202,3 +202,5 @@ if(isLastDiscovered){
 }else{
   fsm.storyStarting()
 }
+
+export { storyTelling }

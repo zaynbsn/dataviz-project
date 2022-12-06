@@ -2,13 +2,48 @@ import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNa
 import { appendStaticAstrodexInfos, quizzSetup, appendQuizzContent } from './quizz.js'
 import { addAstrodexListeners } from './astrodex.js'
 
+// STORYTELLING ET EXPLICATIONS
+const dialogueJson = await getDataJson("./static/dialogues/moon-dialogue.json")
+const astrobotModal = document.querySelector('.astrobot-modal')
+const dialogueContent = document.querySelector('.dialogue-content')
+const astrobot = document.querySelector(".astrobot")
+const dialogue = document.querySelector(".dialogue")
+let count = 0
+const continueCallback = () => {
+  if(count < dialogueJson[0].texts.length){
+    dialogue.innerHTML = `<p class="text-dialogue">${dialogueJson[0].texts[count]}</p>`
+    count += 1
+  }else{
+    astrobotModal.style.display = 'none'
+    dialogueContent.style.display = 'none'
+    astrobot.style.display = 'none'
+    document.removeEventListener('keydown', continueCallback)
+  }
+}
+const storyTelling = () => {
+  count = 0
+  astrobotModal.style.display = 'block'
+  dialogueContent.style.display = 'block'
+  astrobot.style.display = 'block'
+
+  console.log(dialogueJson)
+
+  dialogue.innerHTML = `<p class="text-dialogue">${dialogueJson[0].texts[count]}</p>`
+  count += 1
+
+  document.addEventListener('keydown', continueCallback)
+}
+
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
   experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
 }
+if(experiencesDataJson[0].discovered === false){
+  storyTelling()
+}
+
 experiencesDataJson[0].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
-
 
 let moonNavData = await getDataJson('/static/moon/nav-moon.json')
 const navContainer = document.querySelector(".navbar")
