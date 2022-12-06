@@ -5,7 +5,7 @@
     "discovered": false,
     "asset": "./static/Moon.svg",
     "quizz_url_path": "./static/moon/quizz-moon.json",
-    "link_to": "/moon",
+    "link_to": "/lune",
     "summary": "./static/moon/AstroNote_Lune.pdf",
     "bg_color": "#F6F6F9",
     "second_layer_color": "#DEDDE5",

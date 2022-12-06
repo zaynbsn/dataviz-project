@@ -13,7 +13,11 @@ app.listen(3000, () => {
   console.log("listening on http:localhost:3000")
 })
 
-app.get('/moon', (req, res) => {
+app.get('/observatoire', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/pages/observatory.html'))
+})
+
+app.get('/lune', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/pages/moon.html'))
 })
 app.get('/iss', (req, res) => {

@@ -2,8 +2,8 @@
   {
     "data": [
       {
-        "body_before": "La planète Mars est environ",
-        "body_after": "fois plus petite que la Terre.",
+        "body_before": "La diamètre de la planète Mars est environ",
+        "body_after": "fois plus petit que celui de la Terre.",
         "icon": "./static/icons/diameter.svg",
         "select": "Fire Aspect",
         "options": [
