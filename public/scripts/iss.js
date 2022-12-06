@@ -77,7 +77,7 @@ const launchAnim = async (path, callback) => {
   })
 }
 
-const scroll = document.querySelector(".scroll")
+const scroll = document.querySelector(".icon-scroll")
 
 const issCallback = () => {
   let totalHeight = scrollbar.limit.y

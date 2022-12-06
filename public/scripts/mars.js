@@ -76,7 +76,7 @@ const launchAnim = async (path, callback) => {
     scrollbar.addListener(callback)
   })
 }
-const scroll = document.querySelector(".scroll")
+const iconScroll = document.querySelector(".icon-scroll")
 
 const marsCallback = () => {
   let totalHeight = scrollbar.limit.y
@@ -87,9 +87,9 @@ const marsCallback = () => {
   let scrollPercentRounded = Math.round(scrollPercentage)
 
   if(scrollPercentRounded > 10){
-    scroll.style.display = 'none'
+    iconScroll.style.display = 'none'
   }else{
-    scroll.style.display = 'block'
+    iconScroll.style.display = 'block'
   }
 
   if(!isNavClicked){

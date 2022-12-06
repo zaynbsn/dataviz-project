@@ -112,7 +112,7 @@ const launchAnim = async (path, callback) => {
   })
 }
 
-const scroll = document.querySelector(".scroll")
+const scroll = document.querySelector(".icon-scroll")
 
 const moonCallback = () => {
   let totalHeight = scrollbar.limit.y
