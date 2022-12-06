@@ -8,23 +8,26 @@
     <title>Astro</title>
     <link rel="icon" type="image/x-icon" href="./static/lunetteAstronomique.svg">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/astrodex.css">
+    <link rel="stylesheet" href="styles/quizz.css">
     <link rel="stylesheet" href="styles/fonts.css">
     <script src='./state-machine.js'></script>
   </head>
 
   <body>
     <div class="background">
-      <img src="./static/nightSky.svg"/>
+      <img src="./static/nightSky.svg" alt="sky with stars background">
     </div>
     <div id="circularcursor"></div>
     <div class="svg-container">
       <div class="svg-scene">
-        <img src="./static/maisonV2.svg"/>
+        <img src="./static/maisonV2.svg" alt="atrobservatoire">
         <div class="gyalya">
-          <img class="pupil" src="./static/lunetteAstronomique.svg"/>
+          <img class="pupil" src="./static/lunetteAstronomique.svg" alt="atroscope">
         </div>
       </div>
     </div>
+    <a href="/" class="logo"><img src="./static/logo-astro.svg" alt="logo astro"></a>
 
     <div class="dialogue-content">
       <div class="dialogue"></div>
@@ -33,33 +36,57 @@
       </h1>
       </div>
       <div class="astrobot">
-        <img src="./static/astrobot.svg"/>
+        <img src="./static/astrobot.svg" alt="astrobot">
       </div>  
       
-    <div class="astrobot-modal">
-      
-      
-    </div>
+    <div class="astrobot-modal"></div>
     
     <div class="astrodex">
-      <img src="./static/closed-astrodex.svg"/>
+      <img src="./static/closed-astrodex.svg" alt="closed astrodex">
     </div>
 
     <div class="astrodex-modal">
       <div class="astrodex-content">
         <div class="presentation">
+          <button class="close" style="margin-left: 16px;">Fermer</button>
           <div class="title"><h1>Astrodex</h1></div>
           <div class="text">
             <p>Observe le ciel pour découvrir un objet spatial ou une planète.</p><br/>
             <p>Une fois trouvé, récolte ses données afin de compléter l’Astrodex.</p>
           </div>
+          <a class="credits-link" href="/credits.html">
+            <button class="credits">crédits</button>
+          </a>
         </div>
 
-        <div class="experiences"></div>
+          <div class="experiences"></div>
+
+        <!-- only in experience astrodex page -->
+        <div class="quizz-content" style="display: none; margin-top: -1vh">
+          <button class="return">Retour</button>
+          <div class="quizz-title"></div>
+          <div class="quizz">
+            
+          </div>
+          <div class="manage-quizz">
+            <button class="previous">Précédent</button>
+            <button class="next">Suivant</button>
+          </div>
+        </div>
+        <div class="illustration-quizz" style="display: none;">
+          <img class="exp-svg" src="./static/Mars.svg" alt="mars planet" >
+          <a href="./mars.html" class="anim-button-link">
+            <button class="anim-button">Revoir l'animation</button>
+          </a>
+          <a href="./static/mars/file.txt" class="download-link" download="file">
+            <button class="download">Télecharger le résumé</button>
+          </a>
+        </div>
       </div>
     </div>
 
     <div id="night" class="circle"><div id="borderCircle" class="showBorder"></div></div>
     <script type="module" src="index.js"></script>
+    <script type="module" src="./scripts/astrodex.js"></script>
   </body>
 </html>

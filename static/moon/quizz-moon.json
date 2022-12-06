@@ -1,0 +1,127 @@
+[
+  {
+    "data": [
+      {
+        "body_before": "La Lune est environ",
+        "body_after": "fois plus petite que la Terre.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Fire Aspect",
+        "options": [
+          "une",
+          "deux",
+          "trois"
+        ],
+        "valid_answer": "trois",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Elle est située à plus de",
+        "body_after": "kilomètres au dessus de nos têtes. Cette distance est tellement grande que l’ensemble des planètes du système solaire pourrait être comprises entre nous et la Lune.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Knockback",
+        "options": [
+          "200 000",
+          "400 000",
+          "600 000"
+        ],
+        "valid_answer": "400 000",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "La première fois que l’Homme a posé le pied sur la Lune était en",
+        "body_after": "!",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Infinity",
+        "options": [
+          "juillet 1969",
+          "decembre 1996",
+          "decembre 1969",
+          "juillet 1996"
+        ],
+        "valid_answer": "juillet 1969",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Il y a eu au total",
+        "body_after": "missions réussis qui ont permis à l’Homme d’explorer la Lune.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Sharpness",
+        "options": [
+          "6",
+          "12",
+          "18"
+        ],
+        "valid_answer": "6",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "La gravité de la Lune est",
+        "body_after": "fois plus faible que celle de la Terre ce qui permet aux astronautes de sauter plus haut et de redescendre plus lentement.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Efficiency",
+        "options": [
+          "3",
+          "6",
+          "9"
+        ],
+        "valid_answer": "6",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "La Lune met",
+        "body_after": "jours pour faire un tour sur elle même.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Blast Protection",
+        "options": [
+          "24",
+          "26",
+          "28",
+          "30"
+        ],
+        "valid_answer": "28",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "Et elle met également",
+        "body_after": "jours pour effectuer le tour de la Terre.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Channeling",
+        "options": [
+          "24",
+          "26",
+          "28",
+          "30"
+        ],
+        "valid_answer": "28",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  }
+]

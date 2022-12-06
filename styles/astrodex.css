@@ -1,0 +1,247 @@
+:root{
+  --astrodex-height: 485px;
+  --astrodex-width: 900px;
+}
+
+.astrodex{
+  position: absolute;
+  width: auto;
+  height: var(--astrodex-height);
+  top: calc(50% - var(--astrodex-height) / 2);
+  right: 0;
+  z-index: 11;
+  display: block;
+  /* border: 1px solid red; */
+}
+.astrodex img{
+  width: auto;
+  height: 100%;
+}
+.astrodex-modal{
+  width: 900px;
+  height: 485px;
+  background-image: url('../static/opened-astrodex.svg');
+  background-size: 900px 485px;
+  background-repeat: no-repeat;
+  display: none;
+  position: absolute;
+  top: calc(50% - 485px / 2);
+  right: 0;
+  z-index: 13;
+  /* border: 1px solid red; */
+}
+
+.astrodex-modal{
+  width: var(--astrodex-width);
+  height: var(--astrodex-height);
+  background-image: url('../static/opened-astrodex.svg');
+  background-size: var(--astrodex-width) var(--astrodex-height);
+  background-repeat: no-repeat;
+  display: none;
+  position: absolute;
+  top: calc(50% - var(--astrodex-height) / 2);
+  right: 0;
+  z-index: 13;
+  /* border: 1px solid red; */
+} 
+
+.astrodex-modal img {
+  width: 100%;
+  height: 100%;
+}
+
+.astrodex-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  cursor: default;
+  /* border: 1px solid purple; */
+}
+
+.presentation{
+  width: 33%;
+  height: 70%;
+  color: white;
+  font-family: 'Helvetica';
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 3rem;
+  /* border: 1px solid red; */
+}
+.title{
+  width: 100%;
+  height: 20%;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  /* border: 1px solid blue; */
+}
+.text{
+  width: 100%;
+  height: 80%;
+  font-size: 1.1rem;
+  padding-left: 1rem;
+  /* border: 1px solid blue; */
+}
+
+.experiences{
+  width: 64%;
+  height: 70%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 16px;
+  /* border: 1px solid purple; */
+}
+.experience{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+}
+.experience img{
+  width: 75%;
+  height: auto;
+}
+
+.credits-link{
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica";
+  margin-left: 1rem;
+}
+.credits{
+  width: 80%;
+  height: 5%;
+  text-align: right;
+}
+
+.discovered{
+  width: 70%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 200px 200px 0px 0px;
+  position: relative;
+}
+.discovered img{
+  width: 70%;
+  height: auto;
+  z-index: 11;
+}
+.second-layer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  height: 85%;
+  border-radius: 200px 200px 0 0;
+}
+.third-layer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 66%;
+  height: 66%;
+  border-radius: 200px 200px 0 0;
+}
+
+.discovered-button{
+  width: fit-content;
+  height: fit-content;
+  font-weight: bolder;
+  font-size: 0.6rem;
+  padding: 0.5rem 1.4rem;
+  border: none;
+  border-radius: 512px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.manage-quizz{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 10%;
+  /* margin-left: 20%; */
+  /* border: 1px solid red; */
+}
+.manage-quizz button, .quizz-content button, .illustration-quizz button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  padding: 8px 16px 8px 16px;
+  width: 96px;
+  max-height: 30px;
+  border-radius: 512px;
+  text-align: center;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.illustration-quizz button{
+  width: 176px!important;
+}
+
+.close, .return, .credits{
+  max-width: fit-content!important;
+  min-width: fit-content!important;
+  max-height: 30px;
+  background-color: transparent;
+  border: none;
+  color: #ECE9FF;
+  padding: 0 16px 0 16px;
+  padding-left: 0!important;
+}
+.close:hover, .return:hover, .credits:hover{
+  color: #0A0C30;
+  transition: 0.3s;
+}
+.previous:hover, .next:hover{
+  color: #0A0C30;
+  background-color: #ECE9FF;
+  transition: 0.4s;
+}
+.previous, .next {
+  color: #ECE9FF;
+  background-color: transparent;
+  border: 2px solid #ECE9FF;
+}
+.validate, .anim-button, .download {
+  margin-left: 16px;
+  background-color: #ECE9FF;
+  color: #0A0C30;
+  border: 2px solid #ECE9FF;
+}
+.validate:hover, .anim-button:hover, .download:hover{
+  color: #ECE9FF;
+  background-color: transparent;
+  transition: 0.4s;
+}
+.succeed{
+  background-color: green!important;
+  border-color: green!important;
+  color: #ECE9FF;
+}
+.failed{
+  background-color: #B43D52!important;
+  border-color: #B43D52!important;
+  color: #ECE9FF;
+}
+a{
+  text-decoration: none;
+}

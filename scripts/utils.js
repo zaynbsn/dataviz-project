@@ -99,9 +99,16 @@ const showAndHide = (dataObj, scrollPercentRounded, divArray, min, max) => {
   }
 }
 
+const swapAstrodexModal = (isModalDisplayed, astrodexModal, astrodex) => {
+  isModalDisplayed = !isModalDisplayed;
+  astrodexModal.style.display = isModalDisplayed ? 'block' : 'none';
+  astrodex.style.display = isModalDisplayed ? 'none' : 'block';
+  return isModalDisplayed
+}
+
 const getRandomCoordinate = () => {
-  const top = `${randomPercentage(0.05, 0.6)}%`
-  const right = `${randomPercentage(0.1, 0.6)}%`
+  const top = randomPercentage(0.05, 0.6)
+  const right = randomPercentage(0.1, 0.6)
   return [top, right]
 }
 
@@ -110,4 +117,4 @@ const randomPercentage = (min, max) => {
 }
 
 
-export { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, getRandomCoordinate }
+export { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide, getRandomCoordinate, swapAstrodexModal }

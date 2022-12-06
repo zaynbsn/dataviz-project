@@ -1,0 +1,27 @@
+{
+  "text_intro_name_iss": {"value": "Station Spatiale Internationale", "x": "37.5%", "y": "20%", "size": "1.8vw", "color": "#ECE9FF"}, 
+  "text_intro_iss": { "value": "La Station spatiale Internationale est née de la collaboration de quinze pays, liés par un accord intergouvernemental dont la France.", 
+                  "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
+                },
+  "text_intro_iss2": { "value": "Sa conception a couté 150 milliards d’euros. La vie à bord est privée de gravité.", 
+                  "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
+                },
+  "text_intro_iss3": { "value": "", 
+                  "x": "40%", "y": "60%", "size": "1.3vw", "color": "#ECE9FF"
+                },
+  "build_date1": {"value": "1998", "x": "47.2%", "y": "60%", "size": "2.25vw", "color": "#ECE9FF"}, 
+  "build_date2": {"value": "2000", "x": "70%", "y": "47%", "size": "2.25vw", "color": "#ECE9FF"}, 
+  "build_date3": {"value": "2011", "x": "25%", "y": "47%", "size": "2.25vw", "color": "#ECE9FF"}, 
+  "build_date_text":  { "value": "Les pièces principales de la Station Spatiale Internationale ont été construites et assemblées à différents moments.", 
+                        "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
+                      },
+  
+  "dist_earth_iss": {"value": "400km", "x": "40%", "y": "45%", "size": "2.25vw", "color": "#ECE9FF"},
+  "dist_earth_iss_text": {"value": "L'ISS se trouve à 400km au dessus de nos têtes, soit environ 1333 tours Eiffel de hauteur !", "x": "55%", "y": "42%", "size": "1.3vw", "color": "#ECE9FF"},
+  
+  "rotation_duration" : {"value": "1h30", "x": "47.2%", "y": "21%", "size": "2.25vw", "color": "#ECE9FF"},
+  "rotation_duration_text": {"value": "L'ISS met 1h30 à effectuer le tour de la Terre.", "x": "40%", "y": "45%", "size": "1.3vw", "color": "#ECE9FF"},
+  
+  "duration_earth_iss": {"value": "23h", "x": "47.5%", "y": "21%", "size": "2.25vw", "color": "white"},
+  "duration_earth_iss_text": {"value": "C'est le temps qu'il nous faut en fusée pour l'atteindre.", "x": "40%", "y": "45%", "size": "1.3vw", "color": "#ECE9FF"}
+}

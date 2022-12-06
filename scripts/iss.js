@@ -5,27 +5,27 @@ let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
   experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
 }
-experiencesDataJson[0].discovered = true
+experiencesDataJson[1].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
 
-
-let moonNavData = await getDataJson('/static/moon/nav-moon.json')
+let issNavData = await getDataJson('/static/iss/nav-iss.json')
 const navContainer = document.querySelector(".navbar")
 
-for (const item in moonNavData){
-  appendNavbar(item, moonNavData, navContainer)
+
+for (const item in issNavData){
+  appendNavbar(item, issNavData, navContainer)
 }
 
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = '/static/moon/data-moon.json'
-let moonDataJson = await getDataJson(url)
+const url = '/static/iss/data-iss.json'
+let issDataJson = await getDataJson(url)
 
 
 // append data from json in dom
-for(const data in moonDataJson){
-  appendData(data, moonDataJson, mainContainer)
+for(const data in issDataJson){
+  appendData(data, issDataJson, mainContainer)
 }
 
 let scrollbar
@@ -33,9 +33,7 @@ let lottieProgress
 let allMarkersPositions = []
 let isNavClicked = false
 let navbarItems = document.querySelectorAll(".navbar-item")
-
-// select all divs
-let dataObj = selectAllDataDivs(moonDataJson)
+let dataObj = selectAllDataDivs(issDataJson)
 
 const launchAnim = async (path, callback) => {
 
@@ -49,10 +47,15 @@ const launchAnim = async (path, callback) => {
     autoplay: false,
     path: path
   })
+
   lottieProgress.addEventListener('data_ready', async ()  => {
+    console.log(lottieProgress.totalFrames)
+    console.log(scrollbar.limit.y)
     const ratio = scrollbar.limit.y / lottieProgress.totalFrames
+    console.log(ratio)
     allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
-    
+    console.log(allMarkersPositions)
+
     for (let i=0; i < navbarItems.length; i++){
       navbarItems[i].addEventListener('click', () => {
         isNavClicked = true
@@ -66,51 +69,49 @@ const launchAnim = async (path, callback) => {
       })
     }
     scrollbar.scrollTo(0, allMarkersPositions[0], 2000) 
+    // scrollbar.scrollTo(0, 1200, 1000) 
     scrollbar.addListener(callback)
   })
 }
 
 const scroll = document.querySelector(".scroll")
 
-const moonCallback = () => {
+const issCallback = () => {
   let totalHeight = scrollbar.limit.y
   let scrollFromTop = scrollbar.scrollTop
   let totalFrames = lottieProgress.totalFrames
   let currentFrame = lottieProgress.currentFrame
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
+  // console.log(scrollPercentRounded)
 
   if(scrollPercentRounded > 10){
     scroll.style.display = 'none'
   }else{
     scroll.style.display = 'block'
   }
-  
+
   if(!isNavClicked){
-    for(let i=0; i < 7 ; i++){
-      changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
+    for(let i=0; i < 5; i++){
+    changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
     }
   }
+  showAndHide(dataObj, scrollPercentRounded, ["text_intro_name_iss"], 2, 12)
 
-  // moon diameter
-  showAndHide(dataObj, scrollPercentRounded, ["moon_diameter", "earth_diameter", "diameter_text"], 13, 20)
+  showAndHide(dataObj, scrollPercentRounded, ["text_intro_iss"], 5, 9)
+  showAndHide(dataObj, scrollPercentRounded, ["text_intro_iss2"], 9, 12)
   
-  // distance
-  showAndHide(dataObj, scrollPercentRounded, ["dist_earth_moon", "dist_compare_moon"], 23, 29)
-  showAndHide(dataObj, scrollPercentRounded, ["dist_text"], 29, 35)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date1"], 12, 43)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date2"], 25, 43)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date3"], 35, 43)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date_text"], 13, 43)
+
+
+  showAndHide(dataObj, scrollPercentRounded, ["dist_earth_iss", "dist_earth_iss_text"], 48, 57)
   
-  // first steps & missions
-  showAndHide(dataObj, scrollPercentRounded, ["first_step_dates", "first_step_text"], 48, 52)
-  showAndHide(dataObj, scrollPercentRounded, ["missions_text"], 52, 58)
+  showAndHide(dataObj, scrollPercentRounded, ["rotation_duration", "rotation_duration_text"], 62, 79)
   
-  // gravity
-  showAndHide(dataObj, scrollPercentRounded, ["moon_gravity", "earth_gravity", "gravity_text"], 64, 73)
-  
-  // periodic cycle
-  showAndHide(dataObj, scrollPercentRounded, ["periodic_cycle"], 75, 98)
-  showAndHide(dataObj, scrollPercentRounded, ["cycle_text_1"], 75, 80)
-  showAndHide(dataObj, scrollPercentRounded, ["cycle_text_2"], 80, 90)
-  showAndHide(dataObj, scrollPercentRounded, ["cycle_text_3"], 90, 98)
+  showAndHide(dataObj, scrollPercentRounded, ["duration_earth_iss", "duration_earth_iss_text"], 80, 99)
 
   if ((scrollPercentage * totalFrames) / 100 < totalFrames) {
     lottieProgress.goToAndStop((scrollPercentage * totalFrames) / 100, true);
@@ -120,9 +121,10 @@ const moonCallback = () => {
 }
 
 // QUIZZ
-let quizzDataJson = await getDataJson("./static/moon/quizz-moon.json")
+let quizzDataJson = await getDataJson("./static/iss/quizz-iss.json")
 quizzSetup(quizzDataJson)
-appendStaticAstrodexInfos("La Lune", "./static/Moon.svg")
+appendStaticAstrodexInfos("ISS", "./static/ISS.svg")
 appendQuizzContent(quizzDataJson, 0)
 
-launchAnim("./static/moon/moon-v-final2.json", moonCallback)
+launchAnim("./static/iss/iss-v-final.json", issCallback)
+

@@ -1,10 +1,11 @@
 import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide } from './utils.js'
+import { appendStaticAstrodexInfos, quizzSetup, appendQuizzContent } from './quizz.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
   experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
 }
-experiencesDataJson[1].discovered = true
+experiencesDataJson[2].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
 
 let marsNavData = await getDataJson('/static/mars/nav-mars.json')
@@ -67,6 +68,7 @@ const launchAnim = async (path, callback) => {
     scrollbar.addListener(callback)
   })
 }
+const scroll = document.querySelector(".scroll")
 
 const marsCallback = () => {
   let totalHeight = scrollbar.limit.y
@@ -75,6 +77,12 @@ const marsCallback = () => {
   let currentFrame = lottieProgress.currentFrame
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
+
+  if(scrollPercentRounded > 10){
+    scroll.style.display = 'none'
+  }else{
+    scroll.style.display = 'block'
+  }
 
   if(!isNavClicked){
     for(let i=0; i < 9 ; i++){
@@ -124,5 +132,12 @@ const marsCallback = () => {
   }
 }
 
-launchAnim("./static/mars/mars-v-final.json", marsCallback)
+// QUIZZ
+let quizzDataJson = await getDataJson("./static/mars/quizz-mars.json")
+quizzSetup(quizzDataJson)
+appendStaticAstrodexInfos("Mars", "./static/Mars.svg")
+appendQuizzContent(quizzDataJson, 0)
+
+// ANIM LAUNCH
+launchAnim("./static/mars/mars-v-final2.json", marsCallback)
 

@@ -1,4 +1,4 @@
-import { getDataJson, getRandomCoordinate } from './scripts/utils.js'
+import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './scripts/utils.js'
 
 // curseur
 const circle=document.querySelector("#night");
@@ -30,24 +30,7 @@ document.addEventListener("mousemove", (e)=>{
   pupil.style.transformOrigin = `${r +"px"} center`;
 });
 
-const astrodex = document.querySelector(".astrodex");
-const astrodexModal = document.querySelector(".astrodex-modal");
-let isModalDisplayed = false
-
-astrodex.addEventListener('click', e => {
-  swapAstrodexModal()
-})
-astrodexModal.addEventListener('click', e => {
-  swapAstrodexModal()
-})
-
-const swapAstrodexModal = () => {
-  isModalDisplayed = !isModalDisplayed;
-  astrodexModal.style.display = isModalDisplayed ? 'block' : 'none';
-  astrodex.style.display = isModalDisplayed ? 'none' : 'block';
-}
 // ############################### ASTRODEX ############################
-const astrodexContent = document.querySelector(".astrodex-content")
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -60,8 +43,8 @@ const expToDiscover = experiencesDataJson.find((exp) => exp.discovered === false
 if(expToDiscover){
   let div = document.createElement("div")
   const coordinate = getRandomCoordinate()
-  div.style.top = coordinate[0]
-  div.style.right = coordinate[1]
+  div.style.top = coordinate[0] + '%'
+  div.style.right = coordinate[1] + '%'
   div.style.position = 'absolute'
 
   div.innerHTML = `<a href="${expToDiscover.link_to}">
@@ -75,14 +58,21 @@ if(expToDiscover){
     let div = document.createElement("div")
 
     const coordinate = getRandomCoordinate()
+    
     for (const tuple of coordinatesArray){
-      while(tuple[0]-3 <= coordinate[0] && coordinate[0] <= tuple[0]+3 && tuple[1]-3 <= coordinate[1] && coordinate[1] <= tuple[1]+3){
+      while(tuple[0]-5 <= coordinate[0] && coordinate[0] <= tuple[0]+5
+        && tuple[1]-5 <= coordinate[1] && coordinate[1] <= tuple[1]+5
+        ){
         coordinate = getRandomCoordinate()
       }
     }
     coordinatesArray.push(coordinate)
-    div.style.top = coordinate[0]
-    div.style.right = coordinate[1]
+    // div.style.top = coordinate[0] + '%'
+    // div.style.right = coordinate[1] + '%'
+    const number = 20 * coordinatesArray.length
+    div.style.top = number + '%'
+    div.style.right = number + '%'
+
     div.style.position = 'absolute'
     div.innerHTML = `<a href="${exp.link_to}">
                       <img src="${exp.asset}" class="svg-${exp.name}" />
@@ -91,25 +81,26 @@ if(expToDiscover){
   }
 }
 
-
+const astrodex = document.querySelector(".astrodex");
+const astrodexModal = document.querySelector(".astrodex-modal");
+let isModalDisplayed = false
 
 const continueCallback = () => {
   const rightDialogue = dialogueJson.find(dialogue => {
     if(dialogue.state === fsm.state) return dialogue
   })
-  
   if(count < rightDialogue.texts.length){
-    if(fsm.state === 'start'){
+    if(fsm.state === 'storyStart'){
       const svgContainer = document.querySelector(".svg-container")
       if(count === 4){
         svgContainer.style.zIndex = 13
       }
       if(count === 5){
         svgContainer.style.zIndex = 11
-        swapAstrodexModal()
+        isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
       }
       if(count === 6){
-        swapAstrodexModal()
+        isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
       }
     }
     dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
@@ -132,32 +123,23 @@ const dialogue = document.querySelector(".dialogue")
 let count = 0
 
 let fsm = new StateMachine({
-  init: `${moonJson.discovered === true 
-            ? marsJson.discovered === true 
-            ? 'moonExp' 
-            : 'hoverMoon' 
-            : 'start'}`,
+  init: `start`,
   transitions: [
-    { name: 'hoveringMoon',     from: 'start',  to: 'hoverMoon' },
-    { name: 'moonDiscovered',   from: 'hoverMoon', to: 'moonExp'  },
-    { name: 'marsDiscovered', from: 'moonExp',    to: 'marsExp' },
+    { name: 'storyStarting',     from: 'start',  to: 'storyStart' },
+    { name: 'hoveringMoon',     from: 'storyStart',  to: 'hoverMoon' },
+    { name: 'moonDiscovered',   from: 'start', to: 'moonExp'  },
+    { name: 'issDiscovered',   from: 'start', to: 'issExp'  },
+    { name: 'marsDiscovered', from: 'start',    to: 'marsExp' },
   ],
   methods: {
-    onHoveringMoon:     function() { console.log('clique sur la lune pour découvrir ses données')},
-    onMoonDiscovered:   function() { console.log('bravo tu as recolté les données de mars!')},
-    onMarsDiscovered:   function() { console.log('bravo tu as recolté les données de mars!')},
+    onAfterStoryStarting: function() {storyTelling()},
+    onAfterMoonDiscovered:   function() { storyTelling()},
+    onAfterIssDiscovered:   function() { storyTelling()},
+    onAfterMarsDiscovered:   function() { storyTelling()},
   }
 });
-if(moonJson.discovered === true){
-  if(marsJson.discovered === true){
-  fsm.marsDiscovered()
-  }else{
-    fsm.moonDiscovered()
-  }
-}
 
-// START STATE
-if(fsm.state === 'start' || fsm.state === 'moonExp' || fsm.state === 'marsExp' ){
+const storyTelling = () => {
   count = 0
   astrobotModal.style.display = 'block'
   dialogueContent.style.display = 'block'
@@ -174,11 +156,10 @@ if(fsm.state === 'start' || fsm.state === 'moonExp' || fsm.state === 'marsExp' )
 }
 
 // MOONHOVER STATE
-if(fsm.state === 'start'){
-  const svgMoon = document.querySelector('.svg-moon')
-
+const svgMoon = document.querySelector('.svg-moon')
+if(svgMoon){
   svgMoon.addEventListener('mouseenter', async () => {
-    if(fsm.state === 'start'){
+    if(fsm.state === 'storyStart'){
       count = 0
       fsm.hoveringMoon()
       svgMoon.style.zIndex = 100
@@ -195,42 +176,19 @@ if(fsm.state === 'start'){
       
       dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
       count += 1
-
+  
       document.addEventListener('keydown', continueCallback)
     }
   })
 }
 
-const experiences = document.querySelector(".experiences")
+const allDiscovered = experiencesDataJson.filter(exp => exp.discovered === true)
+const isLastDiscovered = allDiscovered[allDiscovered.length-1]
 
-for(const experience of experiencesDataJson){
-  let div = document.createElement("div")
-  div.classList.add("experience")
-  div.style.width = `calc(100% / ${experiencesDataJson.length})`
-  if(experience.discovered){
-    div.innerHTML = `<div class="discovered ${experience.name}">
-                      <div class="second-layer second-layer-${experience.name}"></div>
-                      <div class="third-layer third-layer-${experience.name}"></div>
-                      <img src="${experience.asset}"/>
-                      <div style="z-index: 11; font-weight: 900;">${experience.name.charAt(0).toUpperCase() + experience.name.slice(1)}</div>
-                      <a href="${experience.link_to}" style="z-index: 11;">
-                        <button class="discovered-button ${experience.name}-button">Inspecter</button>
-                      </a>
-                    </div>`
-    experiences.appendChild(div)
-    const discovered = document.querySelector(`.${experience.name}`)
-    const discoveredButton = document.querySelector(`.${experience.name}-button`)
-    const secondLayer = document.querySelector(`.second-layer-${experience.name}`)
-    const thirdLayer = document.querySelector(`.third-layer-${experience.name}`)
-    // add some style
-    discovered.style.backgroundColor = experience.bg_color
-    discovered.style.color = experience.title_color
-    discoveredButton.style.backgroundColor = experience.button_bg_color
-    discoveredButton.style.color = experience.button_text_color
-    secondLayer.style.backgroundColor = experience.second_layer_color
-    thirdLayer.style.backgroundColor = experience.third_layer_color
-  }else{
-    div.innerHTML = `<img src="./static/corrupted.svg"/>`
-    experiences.appendChild(div)
-  } 
+if(isLastDiscovered){
+  if(isLastDiscovered.name === 'moon') fsm.moonDiscovered()
+  if(isLastDiscovered.name === 'iss')fsm.issDiscovered()
+  if(isLastDiscovered.name === 'mars')fsm.marsDiscovered()
+}else{
+  fsm.storyStarting()
 }

@@ -1,0 +1,248 @@
+[
+  {
+    "data": [
+      {
+        "body_before": "La planète Mars est environ",
+        "body_after": "fois plus petite que la Terre.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Fire Aspect",
+        "options": [
+          "une",
+          "deux",
+          "trois"
+        ],
+        "valid_answer": "deux",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Son diamètre mesure",
+        "body_after": ".",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Knockback",
+        "options": [
+          "6 792km",
+          "12 742km"
+        ],
+        "valid_answer": "6 792km",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Mars a une masse",
+        "body_after": "inférieure à celle de la Terre.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Infinity",
+        "options": [
+          "7 fois.",
+          "8 fois",
+          "9 fois",
+          "10 fois"
+        ],
+        "valid_answer": "9 fois",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "En fusée, on est estimerait le temps de voyage entre la Terre et Mars à",
+        "body_after": ".",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Sharpness",
+        "options": [
+          "3 mois",
+          "6 mois",
+          "9 mois",
+          "12 mois"
+        ],
+        "valid_answer": "6 mois",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Mars possède , ",
+        "body_after": "satellite(s) naturel(s).",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Efficiency",
+        "options": [
+          "une",
+          "deux",
+          "trois"
+        ],
+        "valid_answer": "deux",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "Ils sont appelés.",
+        "body_after": ".",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Aqua Affinity",
+        "options": [
+          "Phobos et Déimos",
+          "Curiosity et Perseverence",
+          "Lune"
+        ],
+        "valid_answer": "Phobos et Déimos",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Mars est tout comme la Terre une planète appartenant à notre système solaire. Par rapport au Soleil,Mars est la",
+        "body_after": "planète du système solaire.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Blast Protection",
+        "options": [
+          "2ème",
+          "3ème",
+          "4ème",
+          "5ème"
+        ],
+        "valid_answer": "4ème",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Sur Terre, une année dure",
+        "body_after": "jours.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Channeling",
+        "options": [
+          "365,25",
+          "668,6"
+        ],
+        "valid_answer": "365,25",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "Tandis que sur Mars, elle dure",
+        "body_after": "jours.",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Cleaving",
+        "options": [
+          "365,25",
+          "668,6"
+        ],
+        "valid_answer": "668,6",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "Sur Mars, les températures minimales de Mars peuvent descendre sous les",
+        "body_after": ".",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Curse of Binding",
+        "options": [
+          "-140°C",
+          "-165°C",
+          "-185°C"
+        ],
+        "valid_answer": "-140°C",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "Les températures moyennes sont de",
+        "body_after": ".",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Curse of Vanishing",
+        "options": [
+          "-105°C",
+          "-85°C",
+          "-65°C"
+        ],
+        "valid_answer": "-65°C",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "Les températures maximales peuvent atteindre les",
+        "body_after": ".",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Depth Strider",
+        "options": [
+          "20°C",
+          "30°C",
+          "40°C"
+        ],
+        "valid_answer": "20°C",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  },
+  {
+    "data": [
+      {
+        "body_before": "",
+        "body_after": "robots envoyés par l’Homme ont déjà touché le seul Martien",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Flame",
+        "options": [
+          "3",
+          "6",
+          "9"
+        ],
+        "valid_answer": "9",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "Aujourd’hui seulement deux sont encore en activité :",
+        "body_after": "(2012) ",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Fire Protection",
+        "options": [
+          "Curiosity",
+          "Perseverance",
+          "R2D2"
+        ],
+        "valid_answer": "Curiosity",
+        "user_response": "",
+        "is_user_response_valid": false
+      },
+      {
+        "body_before": "et",
+        "body_after": "(2020).",
+        "icon": "./static/icons/diameter.svg",
+        "select": "Feather Falling",
+        "options": [
+          "Perseverance",
+          "Curiosity",
+          "C3PO"
+        ],
+        "valid_answer": "Perseverance",
+        "user_response": "",
+        "is_user_response_valid": false
+      }
+    ]
+  }
+]
