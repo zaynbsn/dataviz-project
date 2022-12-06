@@ -1,5 +1,5 @@
-import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './utils.js'
-import { addAstrodexListeners } from './astrodex.js'
+import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './scripts/utils.js'
+import { addAstrodexListeners } from './scripts/astrodex.js'
 
 // curseur
 const circle=document.querySelector("#night");
