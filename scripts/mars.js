@@ -68,6 +68,7 @@ const launchAnim = async (path, callback) => {
     scrollbar.addListener(callback)
   })
 }
+const scroll = document.querySelector(".scroll")
 
 const marsCallback = () => {
   let totalHeight = scrollbar.limit.y
@@ -76,6 +77,12 @@ const marsCallback = () => {
   let currentFrame = lottieProgress.currentFrame
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
+
+  if(scrollPercentRounded > 10){
+    scroll.style.display = 'none'
+  }else{
+    scroll.style.display = 'block'
+  }
 
   if(!isNavClicked){
     for(let i=0; i < 9 ; i++){

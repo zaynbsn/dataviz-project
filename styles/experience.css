@@ -54,6 +54,31 @@ canvas{
   transition: 0.3s;
   border: 1px solid transparent;
 }
+.logo{
+  height: auto;
+  width: 150px;
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  z-index: 11;
+}
+.logo img{
+  width: 100%;
+  height: auto;
+}
+.scroll{
+  height: auto;
+  width: 50px;
+  position: fixed;
+  left: calc(50% - 25px);
+  bottom: 4rem;
+  z-index: 100;
+}
+.scroll img{
+  width: 100%;
+  height: auto;
+}
+
 .navbar{
   display: flex;
   flex-direction: column;
@@ -62,7 +87,7 @@ canvas{
   width: fit-content;
   height: 70vh;
   position: fixed;
-  left: 0;
+  left: 1rem;
   top: calc(50vh - 35vh);
   /* border: 1px solid red; */
   z-index: 3;

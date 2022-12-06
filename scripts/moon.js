@@ -69,6 +69,9 @@ const launchAnim = async (path, callback) => {
     scrollbar.addListener(callback)
   })
 }
+
+const scroll = document.querySelector(".scroll")
+
 const moonCallback = () => {
   let totalHeight = scrollbar.limit.y
   let scrollFromTop = scrollbar.scrollTop
@@ -77,6 +80,12 @@ const moonCallback = () => {
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
 
+  if(scrollPercentRounded > 10){
+    scroll.style.display = 'none'
+  }else{
+    scroll.style.display = 'block'
+  }
+  
   if(!isNavClicked){
     for(let i=0; i < 7 ; i++){
       changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
