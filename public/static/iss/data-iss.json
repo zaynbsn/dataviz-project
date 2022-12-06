@@ -1,5 +1,5 @@
 {
-  "text_intro_name_iss": {"value": "Station Spatiale Internationale", "x": "37.5%", "y": "20%", "size": "1.8vw", "color": "#ECE9FF"}, 
+  "text_intro_name_iss": {"value": "Station Spatiale Internationale", "x": "26%", "y": "15%", "size": "3.5vw", "color": "#ECE9FF"}, 
   "text_intro_iss": { "value": "La Station spatiale Internationale est née de la collaboration de quinze pays, liés par un accord intergouvernemental dont la France.", 
                   "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
                 },
