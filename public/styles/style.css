@@ -28,8 +28,9 @@ body{
   border-radius: 50%;
   height: 900px;
   width: 900px;
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 50px 2000px black, 0 0 150px 400px black inset;
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  background-color: rgba(10, 12, 48, 0.4);
+  box-shadow: 0 0 50px 2000px black, 0 0 10px 350px black inset;
   position: absolute;
   z-index: 10;
   pointer-events: none;
