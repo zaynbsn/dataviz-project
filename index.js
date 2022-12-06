@@ -12,3 +12,16 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log("listening on http:localhost:3000")
 })
+
+app.get('/moon', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/moon.html'))
+})
+app.get('/iss', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/iss.html'))
+})
+app.get('/mars', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/mars.html'))
+})
+app.get('/credits', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/credits.html'))
+})
