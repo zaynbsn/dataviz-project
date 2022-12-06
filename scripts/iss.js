@@ -2,14 +2,14 @@ import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNa
 import { appendStaticAstrodexInfos, quizzSetup, appendQuizzContent } from './quizz.js'
 import { addAstrodexListeners } from './astrodex.js'
 
-let experiencesDataJson = await getDataJson("./static/experiences.json")
+let experiencesDataJson = await getDataJson("../static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
   experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
 }
 experiencesDataJson[1].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
 
-let issNavData = await getDataJson('/static/iss/nav-iss.json')
+let issNavData = await getDataJson('../static/iss/nav-iss.json')
 const navContainer = document.querySelector(".navbar")
 
 
@@ -20,7 +20,7 @@ for (const item in issNavData){
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = './static/iss/data-iss.json'
+const url = '../static/iss/data-iss.json'
 let issDataJson = await getDataJson(url)
 
 

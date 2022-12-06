@@ -55,7 +55,7 @@ for (const item in moonNavData){
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = './static/moon/data-moon.json'
+const url = '.oon./static/moon/data-moon.json'
 let moonDataJson = await getDataJson(url)
 
 
