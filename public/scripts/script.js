@@ -1,4 +1,5 @@
 import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './utils.js'
+import { addAstrodexListeners } from './astrodex.js'
 
 // curseur
 const circle=document.querySelector("#night");
@@ -145,6 +146,14 @@ const storyTelling = () => {
   dialogueContent.style.display = 'block'
   astrobot.style.display = 'block'
 
+  if(fsm.state === 'marsExp'){
+    const fireworks = document.querySelector(".fireworks")
+    fireworks.style.display = "block"
+    setTimeout(() => {
+      fireworks.style.display = "none"
+    }, 1000)
+  }
+
   const rightDialogue = dialogueJson.find(dialogue => {
     if(dialogue.state === fsm.state) return dialogue
   })
@@ -184,11 +193,12 @@ if(svgMoon){
 
 const allDiscovered = experiencesDataJson.filter(exp => exp.discovered === true)
 const isLastDiscovered = allDiscovered[allDiscovered.length-1]
+addAstrodexListeners()
 
 if(isLastDiscovered){
   if(isLastDiscovered.name === 'moon') fsm.moonDiscovered()
-  if(isLastDiscovered.name === 'iss')fsm.issDiscovered()
-  if(isLastDiscovered.name === 'mars')fsm.marsDiscovered()
+  if(isLastDiscovered.name === 'iss') fsm.issDiscovered()
+  if(isLastDiscovered.name === 'mars') fsm.marsDiscovered()
 }else{
   fsm.storyStarting()
 }

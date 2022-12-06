@@ -7,18 +7,19 @@ if(localStorage.getItem("experiencesDataJson")){
   experiencesDataJson = JSON.parse(localStorage.getItem("experiencesDataJson"))
 }
 
-const astrodex = document.querySelector(".astrodex");
-const astrodexModal = document.querySelector(".astrodex-modal");
-const close = document.querySelector(".close");
-let isModalDisplayed = false
-
-astrodex.addEventListener('click', e => {
-  isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+const addAstrodexListeners = () => {
+  const astrodex = document.querySelector(".astrodex");
+  const astrodexModal = document.querySelector(".astrodex-modal");
+  const close = document.querySelector(".close");
+  let isModalDisplayed = false
   
-})
-close.addEventListener('click', e => {
-  isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
-})
+  astrodex.addEventListener('click', e => {
+    isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+  })
+  close.addEventListener('click', e => {
+    isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+  })
+}
 
 // CONTENT
 const experiences = document.querySelector(".experiences")
@@ -51,9 +52,9 @@ if(experiences){
 
       
       let quizzDataJson = await getDataJson(experience.quizz_url_path)
-      discoveredButton.addEventListener('click', () => {
+      discoveredButton.addEventListener('click', async () => {
         appendResumeContent(quizzDataJson, 0, experience.trad, experience.asset)
-        appendStaticAstrodexInfos(experience.trad, experience.asset, experience.link_to, experience.summary)
+        await appendStaticAstrodexInfos(experience.trad, experience.asset, experience.link_to, experience.summary)
         resumeSetup(quizzDataJson)
       })
     }else{
@@ -62,3 +63,5 @@ if(experiences){
     } 
   }
 }
+
+export { addAstrodexListeners }

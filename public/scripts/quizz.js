@@ -1,4 +1,4 @@
-const appendStaticAstrodexInfos = (name, svgPath, pageUrl, downloadLink) => {
+const appendStaticAstrodexInfos = async (name, svgPath, pageUrl, downloadLink) => {
   // quizz static img
   const expSvg = document.querySelector('.exp-svg')
   if(expSvg) expSvg.src = svgPath
@@ -17,23 +17,23 @@ const appendStaticAstrodexInfos = (name, svgPath, pageUrl, downloadLink) => {
   if(download) download.href = downloadLink
 }
 
-const quizzSetup = (quizzDataJson) => {
+const quizzSetup = async (quizzDataJson) => {
   let globalIndex = 0
   
   const previous = document.querySelector('.previous')
   const next = document.querySelector('.next')
   const validate = document. querySelector('.validate')
   
-  previous.addEventListener('click', () => {
+  previous.addEventListener('click', async () => {
     validate.classList.remove('failed')
     validate.classList.remove('succeed')
-    appendQuizzContent(quizzDataJson, globalIndex-1)
+    await appendQuizzContent(quizzDataJson, globalIndex-1)
     globalIndex -= 1
   })
-  next.addEventListener('click', () => {
+  next.addEventListener('click', async () => {
     validate.classList.remove('failed')
     validate.classList.remove('succeed')
-    appendQuizzContent(quizzDataJson, globalIndex+1)
+    await appendQuizzContent(quizzDataJson, globalIndex+1)
     globalIndex += 1
   })
   
@@ -65,7 +65,7 @@ const resumeSetup = (quizzDataJson) => {
   })
 }
 
-const appendQuizzContent = (quizzDataJson, index) => {
+const appendQuizzContent = async (quizzDataJson, index) => {
   const quizz = document.querySelector('.quizz')
   quizz.innerHTML = ""
   const quizzObj = quizzDataJson[index].data
@@ -138,7 +138,6 @@ const appendResumeContent = (quizzDataJson, index) => {
 
   const quizzObj = quizzDataJson[index].data
   
-  console.log(index, quizzDataJson[index])
   let fullSentence = ''
   for(const sentence of quizzObj){
     fullSentence += `${sentence.body_before} ${sentence.valid_answer} ${sentence.body_after}`

@@ -1,5 +1,6 @@
 import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide } from './utils.js'
 import { appendStaticAstrodexInfos, quizzSetup, appendQuizzContent } from './quizz.js'
+import { addAstrodexListeners } from './astrodex.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -49,6 +50,13 @@ const launchAnim = async (path, callback) => {
   })
 
   lottieProgress.addEventListener('data_ready', async ()  => {
+    // QUIZZ
+    let quizzDataJson = await getDataJson("./static/mars/quizz-mars.json")
+    await quizzSetup(quizzDataJson)
+    await appendStaticAstrodexInfos("Mars", "./static/Mars.svg")
+    await appendQuizzContent(quizzDataJson, 0)
+    addAstrodexListeners()
+
     const ratio = scrollbar.limit.y / lottieProgress.totalFrames
     allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
 
@@ -132,11 +140,8 @@ const marsCallback = () => {
   }
 }
 
-// QUIZZ
-let quizzDataJson = await getDataJson("./static/mars/quizz-mars.json")
-quizzSetup(quizzDataJson)
-appendStaticAstrodexInfos("Mars", "./static/Mars.svg")
-appendQuizzContent(quizzDataJson, 0)
+
+
 
 // ANIM LAUNCH
 launchAnim("./static/mars/mars-v-final2.json", marsCallback)

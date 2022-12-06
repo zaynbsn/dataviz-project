@@ -1,5 +1,6 @@
 import { getDataJson, appendNavbar, appendData, selectAllDataDivs, getRatioForNavigation, changeNavBarActive, showAndHide } from './utils.js'
 import { appendStaticAstrodexInfos, quizzSetup, appendQuizzContent } from './quizz.js'
+import { addAstrodexListeners } from './astrodex.js'
 
 let experiencesDataJson = await getDataJson("./static/experiences.json")
 if(localStorage.getItem("experiencesDataJson")){
@@ -49,12 +50,14 @@ const launchAnim = async (path, callback) => {
   })
 
   lottieProgress.addEventListener('data_ready', async ()  => {
-    console.log(lottieProgress.totalFrames)
-    console.log(scrollbar.limit.y)
+    let quizzDataJson = await getDataJson("./static/iss/quizz-iss.json")
+    await quizzSetup(quizzDataJson)
+    await appendStaticAstrodexInfos("ISS", "./static/ISS.svg")
+    await appendQuizzContent(quizzDataJson, 0)
+    addAstrodexListeners()
+
     const ratio = scrollbar.limit.y / lottieProgress.totalFrames
-    console.log(ratio)
     allMarkersPositions = await getRatioForNavigation(ratio, lottieProgress)
-    console.log(allMarkersPositions)
 
     for (let i=0; i < navbarItems.length; i++){
       navbarItems[i].addEventListener('click', () => {
@@ -68,7 +71,7 @@ const launchAnim = async (path, callback) => {
         navbarItems[i].classList.add("is-active");
       })
     }
-    scrollbar.scrollTo(0, allMarkersPositions[0], 2000) 
+    scrollbar.scrollTo(0, allMarkersPositions[0], 1000) 
     // scrollbar.scrollTo(0, 1200, 1000) 
     scrollbar.addListener(callback)
   })
@@ -121,10 +124,7 @@ const issCallback = () => {
 }
 
 // QUIZZ
-let quizzDataJson = await getDataJson("./static/iss/quizz-iss.json")
-quizzSetup(quizzDataJson)
-appendStaticAstrodexInfos("ISS", "./static/ISS.svg")
-appendQuizzContent(quizzDataJson, 0)
+
 
 launchAnim("./static/iss/iss-v-final.json", issCallback)
 
