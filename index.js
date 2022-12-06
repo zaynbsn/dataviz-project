@@ -7,8 +7,8 @@ const app = express()
 
 
 app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, '/public/pages/index.html'))
-  res.send('Hello World!')
+  res.sendFile('/pages/index.html')
+  // res.send('Hello World!')
 })
 
 app.listen(3000, () => {
