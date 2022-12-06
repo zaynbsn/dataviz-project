@@ -9,7 +9,7 @@ if(localStorage.getItem("experiencesDataJson")){
 experiencesDataJson[1].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
 
-let issNavData = await getDataJson('../static/iss/nav-iss.json')
+let issNavData = await getDataJson('./static/iss/nav-iss.json')
 const navContainer = document.querySelector(".navbar")
 
 
