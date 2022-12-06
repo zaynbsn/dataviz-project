@@ -88,11 +88,15 @@ const issCallback = () => {
     changeNavBarActive(currentFrame, lottieProgress.markers, i, navbarItems)
     }
   }
+  showAndHide(dataObj, scrollPercentRounded, ["text_intro_name_iss"], 2, 12)
+
+  showAndHide(dataObj, scrollPercentRounded, ["text_intro_iss"], 5, 9)
+  showAndHide(dataObj, scrollPercentRounded, ["text_intro_iss2"], 9, 12)
   
-  showAndHide(dataObj, scrollPercentRounded, ["build_date_text"], 12, 24)
   showAndHide(dataObj, scrollPercentRounded, ["build_date1"], 12, 43)
   showAndHide(dataObj, scrollPercentRounded, ["build_date2"], 25, 43)
   showAndHide(dataObj, scrollPercentRounded, ["build_date3"], 35, 43)
+  showAndHide(dataObj, scrollPercentRounded, ["build_date_text"], 13, 43)
 
 
   showAndHide(dataObj, scrollPercentRounded, ["dist_earth_iss", "dist_earth_iss_text"], 48, 57)

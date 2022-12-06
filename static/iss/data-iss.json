@@ -1,9 +1,19 @@
 {
+  "text_intro_name_iss": {"value": "Station Spatiale Internationale", "x": "37.5%", "y": "20%", "size": "1.8vw", "color": "#ECE9FF"}, 
+  "text_intro_iss": { "value": "La Station spatiale Internationale est née de la collaboration de quinze pays, liés par un accord intergouvernemental dont la France.", 
+                  "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
+                },
+  "text_intro_iss2": { "value": "Sa conception a couté 150 milliards d’euros. La vie à bord est privée de gravité.", 
+                  "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
+                },
+  "text_intro_iss3": { "value": "", 
+                  "x": "40%", "y": "60%", "size": "1.3vw", "color": "#ECE9FF"
+                },
   "build_date1": {"value": "1998", "x": "47.2%", "y": "60%", "size": "2.25vw", "color": "#ECE9FF"}, 
   "build_date2": {"value": "2000", "x": "70%", "y": "47%", "size": "2.25vw", "color": "#ECE9FF"}, 
   "build_date3": {"value": "2011", "x": "25%", "y": "47%", "size": "2.25vw", "color": "#ECE9FF"}, 
   "build_date_text":  { "value": "Les pièces principales de la Station Spatiale Internationale ont été construites et assemblées à différents moments.", 
-                        "x": "40%", "y": "20%", "size": "1.3vw", "color": "#ECE9FF"
+                        "x": "40%", "y": "70%", "size": "1.1vw", "color": "#ECE9FF"
                       },
   
   "dist_earth_iss": {"value": "400km", "x": "40%", "y": "45%", "size": "2.25vw", "color": "#ECE9FF"},
