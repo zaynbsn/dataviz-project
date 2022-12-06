@@ -1,5 +1,5 @@
 const express = require('express')
-// const path = require('path')
+const path = require('path')
 
 const app = express()
 
@@ -7,7 +7,7 @@ const app = express()
 
 
 app.get('/', (req, res) => {
-  res.sendFile('/pages/index.html')
+  res.sendFile(path.join(__dirname, '/public/pages/index.html'))
   // res.send('Hello World!')
 })
 
