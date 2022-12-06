@@ -43,7 +43,7 @@
   right: 0;
   z-index: 13;
   /* border: 1px solid red; */
-}
+} 
 
 .astrodex-modal img {
   width: 100%;
@@ -108,6 +108,19 @@
 .experience img{
   width: 75%;
   height: auto;
+}
+
+.credits-link{
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica";
+  margin-left: 1rem;
+}
+.credits{
+  width: 80%;
+  height: 5%;
+  text-align: right;
 }
 
 .discovered{
@@ -184,7 +197,7 @@
   width: 176px!important;
 }
 
-.close, .return{
+.close, .return, .credits{
   max-width: fit-content!important;
   min-width: fit-content!important;
   max-height: 30px;
@@ -194,7 +207,7 @@
   padding: 0 16px 0 16px;
   padding-left: 0!important;
 }
-.close:hover, .return:hover{
+.close:hover, .return:hover, .credits:hover{
   color: #0A0C30;
   transition: 0.3s;
 }

@@ -107,8 +107,8 @@ const swapAstrodexModal = (isModalDisplayed, astrodexModal, astrodex) => {
 }
 
 const getRandomCoordinate = () => {
-  const top = `${randomPercentage(0.05, 0.6)}%`
-  const right = `${randomPercentage(0.1, 0.6)}%`
+  const top = randomPercentage(0.05, 0.6)
+  const right = randomPercentage(0.1, 0.6)
   return [top, right]
 }
 

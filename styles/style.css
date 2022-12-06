@@ -62,6 +62,19 @@ body{
   position: relative;
 }
 
+.logo{
+  height: auto;
+  width: 150px;
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  z-index: 11;
+}
+.logo img{
+  width: 100%;
+  height: auto;
+}
+
 .svg-container{
   width: 33%;
   height: 100vh;

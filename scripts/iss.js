@@ -74,6 +74,8 @@ const launchAnim = async (path, callback) => {
   })
 }
 
+const scroll = document.querySelector(".scroll")
+
 const issCallback = () => {
   let totalHeight = scrollbar.limit.y
   let scrollFromTop = scrollbar.scrollTop
@@ -82,6 +84,12 @@ const issCallback = () => {
   let scrollPercentage = (scrollFromTop * 100) / totalHeight
   let scrollPercentRounded = Math.round(scrollPercentage)
   // console.log(scrollPercentRounded)
+
+  if(scrollPercentRounded > 10){
+    scroll.style.display = 'none'
+  }else{
+    scroll.style.display = 'block'
+  }
 
   if(!isNavClicked){
     for(let i=0; i < 5; i++){

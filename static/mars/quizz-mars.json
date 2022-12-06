@@ -89,7 +89,7 @@
         "is_user_response_valid": false
       },
       {
-        "body_before": "Ils sont appellés.",
+        "body_before": "Ils sont appelés.",
         "body_after": ".",
         "icon": "./static/icons/diameter.svg",
         "select": "Aqua Affinity",
