@@ -6,7 +6,7 @@ const app = express()
 // app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/pages/index.html'))
+  res.sendFile(path.join(__dirname, '/views/pages/index.html'))
   // res.send('Hello World!')
 })
 
