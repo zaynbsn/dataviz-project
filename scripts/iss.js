@@ -20,7 +20,7 @@ for (const item in issNavData){
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = '../static/iss/data-iss.json'
+const url = './static/iss/data-iss.json'
 let issDataJson = await getDataJson(url)
 
 

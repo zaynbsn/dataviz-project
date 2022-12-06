@@ -20,7 +20,7 @@ for (const item in marsNavData){
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = '../static/mars/data-mars.json'
+const url = './static/mars/data-mars.json'
 let marsDataJson = await getDataJson(url)
 
 
