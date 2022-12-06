@@ -34,10 +34,23 @@
       <h1 class="click-to-continue">
         Appuie sur une touche pour continuer
       </h1>
-      </div>
-      <div class="astrobot">
-        <img src="./static/astrobot.svg" alt="astrobot">
-      </div>  
+    </div>
+    <div class="astrobot">
+      <img src="./static/astrobot.svg" alt="astrobot">
+    </div>
+
+    <div class="fireworks" style="display: none;">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player
+        src="../static/fireworks.json"
+        background="transparent"
+        speed="1"
+        style="width: 100vw; height: 100vh; z-index: 13;position: absolute; left: 0; top: 0;" 
+        loop 
+        autoplay
+      >
+      </lottie-player>
+    </div>
       
     <div class="astrobot-modal"></div>
     
@@ -78,8 +91,8 @@
           <a href="./mars.html" class="anim-button-link">
             <button class="anim-button">Revoir l'animation</button>
           </a>
-          <a href="./static/mars/file.txt" class="download-link" download="file">
-            <button class="download">Télecharger le résumé</button>
+          <a href="./static/mars/file.txt" class="download-link" target="_blank">
+            <button class="download">Ouvrir le résumé pdf</button>
           </a>
         </div>
       </div>
