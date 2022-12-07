@@ -110,6 +110,7 @@ canvas{
   height: fit-content;
   color: rgba(236, 233, 255, 0);
   font-family: 'Helvetica';
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
   /* border: 1px solid green; */
