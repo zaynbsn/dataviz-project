@@ -151,7 +151,7 @@ const storyTelling = () => {
     fireworks.style.display = "block"
     setTimeout(() => {
       fireworks.style.display = "none"
-    }, 10000)
+    }, 5000)
   }
 
   const rightDialogue = dialogueJson.find(dialogue => {
