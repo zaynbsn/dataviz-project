@@ -10,18 +10,19 @@
 }
 
 .dialogue-content{
-  width: 50vw;
-  min-height: 27vh;
+  width: 650px;
+  height: 200px;
   background-image: url("../static/dialogue.svg");
-  background-size: 100% 100%;
+  background-size: 650px 200px;
   background-repeat: no-repeat;
   z-index: 14;
   position: absolute;
   bottom: 16px;
-  left: calc(50% - 25vw);
+  left: calc(50% - 325px);
   display: none;
   /* border: 1px solid red; */
 }
+
 .dialogue{
   width: 100%;
   height: 100%;
@@ -31,11 +32,11 @@
   width: 85%;
   height: fit-content;
   margin-top: 7vh;
-  margin-left: 3vh;
+  margin-left: 3vw;
   color: white;
   font-family: "Helvetica";
   font-weight: 400;
-  font-size: 2.2vh;
+  font-size: 1.1rem;
   /* border: 1px solid red; */
 }
 .click-to-continue{
@@ -44,14 +45,14 @@
   bottom: 2vh;
   color: rgba(255,255,255,0.6);
   font-family: "Helvetica";
-  font-size: 1.5vh;
+  font-size: 0.7rem;
   z-index: 101;
   /* border: 1px solid red; */
 }
 
 .astrobot{
   width: auto;
-  height: 27vh;
+  height: 200px;
   z-index: 14;
   position: absolute;
   bottom: -4px;
@@ -62,4 +63,37 @@
 .astrobot img{
   width: 100%;
   height: 100%;
+}
+@media screen and (min-width: 1300px) {
+  .dialogue-content{
+    width: 715px;
+    height: 220px;
+    background-size: 715px 220px;
+    left: calc(50% - 357px);
+  }
+  .astrobot{
+    height: 220px;
+  }
+}
+@media screen and (min-width: 1610px) {
+  .dialogue-content{
+    width: 845px;
+    height: 260px;
+    background-size: 845px 260px;
+    left: calc(50% - 422px);
+  }
+  .astrobot{
+    height: 260px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .dialogue-content{
+    width: 975px;
+    height: 300px;
+    background-size: 975px 300px;
+    left: calc(50% - 493px);
+  }
+  .astrobot{
+    height: 300px;
+  }
 }
