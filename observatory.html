@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <a href="/observatoire" class="logo"><img src="./static/logo-astro.svg" alt="logo astro"></a>
+    <a href="/dataviz-project/observatory.html" class="logo"><img src="./static/logo-astro.svg" alt="logo astro"></a>
 
     <div class="dialogue-content">
       <div class="dialogue"></div>
@@ -37,14 +37,14 @@
       </h1>
     </div>
     <div class="astrobot">
-      <img src="./static/astrobot.svg" alt="astrobot">
+      <img src="./static/happy-left-astrobot.svg" alt="astrobot">
     </div>
     <div class="astrobot-modal"></div>
 
     <div class="fireworks" style="display: none;">
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <lottie-player
-        src="../static/fireworks.json"
+        src="./static/fireworks.json"
         background="transparent"
         speed="1"
         style="width: 100vw; height: 100vh; z-index: 13;position: absolute; left: 0; top: 0;" 
@@ -68,7 +68,7 @@
             <p>Observe le ciel pour découvrir un objet spatial ou une planète.</p><br/>
             <p>Une fois trouvé, récolte ses données afin de compléter l’Astrodex.</p>
           </div>
-          <a class="credits-link" href="/credits">
+          <a class="credits-link" href="/dataviz-project/credits">
             <button class="credits">crédits</button>
           </a>
         </div>
@@ -100,7 +100,7 @@
     </div>
 
     <div id="night" class="circle"><div id="borderCircle" class="showBorder"></div></div>
-    <script type="module" src="./scripts/script.js"></script>
+    <script type="module" src="./index.js"></script>
     <script type="module" src="./scripts/astrodex.js"></script>
   </body>
 </html>

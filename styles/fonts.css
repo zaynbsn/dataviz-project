@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Gravity-Compressed';
+  src:  url('../fonts/ABCGravity-Compressed-Trial.woff2') format('woff2'),
+        url('../fonts/ABCGravity-Compressed-Trial.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gravity-Condensed';
+  src:  url('../fonts/ABCGravity-Condensed-Trial.woff2') format('woff2'),
+        url('../fonts/ABCGravity-Condensed-Trial.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gravity-Expanded';
+  src:  url('../fonts/ABCGravity-Expanded-Trial.woff2') format('woff2'),
+        url('../fonts/ABCGravity-Expanded-Trial.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gravity-Extended';
+  src:  url('../fonts/ABCGravity-Extended-Trial.woff2') format('woff2'),
+        url('../fonts/ABCGravity-Extended-Trial.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gravity-XCompressed';
+  src:  url('../fonts/ABCGravity-XCompressed-Trial.woff2') format('woff2'),
+        url('../fonts/ABCGravity-XCompressed-Trial.woff') format('woff');
+}
+@font-face {
+  font-family: 'minecraft';
+  src: url('../fonts/enchanting-table/EnchantingTable-Regular.woff') format('woff');
+}

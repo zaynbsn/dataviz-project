@@ -1,5 +1,5 @@
-import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './utils.js'
-import { addAstrodexListeners } from './astrodex.js'
+import { getDataJson, getRandomCoordinate, swapAstrodexModal } from './scripts/utils.js'
+import { addAstrodexListeners } from './scripts/astrodex.js'
 
 // curseur
 const circle=document.querySelector("#night");
@@ -95,13 +95,16 @@ const continueCallback = () => {
       const svgContainer = document.querySelector(".svg-container")
       if(count === 4){
         svgContainer.style.zIndex = 13
+        astrobot.children[0].src="./static/happy-left-astrobot.svg"
       }
       if(count === 5){
         svgContainer.style.zIndex = 11
         isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+        astrobot.children[0].src="./static/happy-up-astrobot.svg"
       }
       if(count === 6){
         isModalDisplayed = swapAstrodexModal(isModalDisplayed, astrodexModal, astrodex)
+        astrobot.children[0].src="./static/happy-left-astrobot.svg"
       }
     }
     dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
@@ -151,7 +154,7 @@ const storyTelling = () => {
     fireworks.style.display = "block"
     setTimeout(() => {
       fireworks.style.display = "none"
-    }, 1000)
+    }, 5000)
   }
 
   const rightDialogue = dialogueJson.find(dialogue => {
@@ -159,6 +162,7 @@ const storyTelling = () => {
   })
 
   dialogue.innerHTML = `<p class="text-dialogue">${rightDialogue.texts[count]}</p>`
+  astrobot.children[0].src="./static/astrobot.svg"
   count += 1
 
   document.addEventListener('keydown', continueCallback)

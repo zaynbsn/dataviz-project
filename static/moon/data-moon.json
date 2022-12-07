@@ -27,10 +27,10 @@
                   },
 
   "periodic_cycle": {"value": "28 jours", "x": "62%", "y": "46%", "size": "2.25vw", "color": "white"},
-  "cycle_text_1": { "value": "La Lune met <mark style='background: red;'>28 jours</mark> pour faire un tour sur elle même.",
+  "cycle_text_1": { "value": "La Lune met 28 jours pour faire un tour sur elle même.",
                   "x": "40.5%", "y": "45%", "size": "1.5vw", "color": "white"
                 },
-  "cycle_text_2": { "value": "Et elle met également <mark style='background: cyan;'>28 jours</mark> pour effectuer le tour de la Terre.",
+  "cycle_text_2": { "value": "Et elle met également 28 jours pour effectuer le tour de la Terre.",
                   "x": "40.5%", "y": "45%", "size": "1.5vw", "color": "white"
                 },
   "cycle_text_3": { "value": "Ainsi, la Lune expose tout le temps la même face d’elle même à la Terre. La face caché de la Lune existe réellement !",

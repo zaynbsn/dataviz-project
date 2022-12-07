@@ -45,7 +45,7 @@ if(experiencesDataJson[0].discovered === false){
 experiencesDataJson[0].discovered = true
 localStorage.setItem("experiencesDataJson", JSON.stringify(experiencesDataJson))
 
-let moonNavData = await getDataJson('/static/moon/nav-moon.json')
+let moonNavData = await getDataJson('./static/moon/nav-moon.json')
 const navContainer = document.querySelector(".navbar")
 
 for (const item in moonNavData){
@@ -55,7 +55,7 @@ for (const item in moonNavData){
 const mainContainer = document.getElementById("myData")
 
 // get data from right json
-const url = '/static/moon/data-moon.json'
+const url = './static/moon/data-moon.json'
 let moonDataJson = await getDataJson(url)
 
 
