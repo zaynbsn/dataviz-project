@@ -1,5 +1,4 @@
-# dataviz-project
-Dataviz project - bachelor 2nd year Ecole by CCI cqmpus Gobelins Annecy
+# Astro - Projet Dataviz
 
 ## Qu'est ce qu'est Astro ?
 
