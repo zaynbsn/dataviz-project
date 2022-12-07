@@ -31,8 +31,8 @@
 .text-dialogue{
   width: 85%;
   height: fit-content;
-  margin-top: 7vh;
-  margin-left: 3vw;
+  margin-top: 3.5rem;
+  margin-left: 1rem;
   color: white;
   font-family: "Helvetica";
   font-weight: 400;
@@ -41,8 +41,8 @@
 }
 .click-to-continue{
   position: absolute;
-  right: 3vh;
-  bottom: 2vh;
+  right: 1rem;
+  bottom: 1rem;
   color: rgba(255,255,255,0.6);
   font-family: "Helvetica";
   font-size: 0.7rem;
@@ -74,6 +74,16 @@
   .astrobot{
     height: 220px;
   }
+  .text-dialogue{
+    margin-top: 3.85rem;
+    margin-left: 1.1rem;
+    font-size: 1.21rem;
+  }
+  .click-to-continue{
+    right: 1.1rem;
+    bottom: 1.1rem;
+    font-size: 0.77rem;
+  }
 }
 @media screen and (min-width: 1610px) {
   .dialogue-content{
@@ -85,6 +95,16 @@
   .astrobot{
     height: 260px;
   }
+  .text-dialogue{
+    margin-top: 4.55rem;
+    margin-left: 1.3rem;
+    font-size: 1.43rem;
+  }
+  .click-to-continue{
+    right: 1.3rem;
+    bottom: 1.3rem;
+    font-size: 0.91rem;
+  }
 }
 @media screen and (min-width: 1920px) {
   .dialogue-content{
@@ -95,5 +115,15 @@
   }
   .astrobot{
     height: 300px;
+  }
+  .text-dialogue{
+    margin-top: 5.25rem;
+    margin-left: 1.5rem;
+    font-size: 1.65rem;
+  }
+  .click-to-continue{
+    right: 1.5rem;
+    bottom: 1.5rem;
+    font-size: 1.05rem;
   }
 }
