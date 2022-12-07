@@ -1,6 +1,6 @@
 # Astro - Projet Dataviz
 
-## Qu'est ce qu'est Astro ?
+## Astro, c'est quoi ?
 
 Astro est un site intéractif de Datavisualisation, présentant de nombreuses données sur certains astres qui peuplent notre ciel, comme la Lune, l'ISS, et la planète Mars.
 Il a pour objectif une visée éducationelle, dans le but de familiariser notre cible avec les prémises de l'observation spatiale.
