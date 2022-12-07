@@ -89,6 +89,7 @@ body {
 
 p, a{
   color: #FFFF82;
+  max-width: 24%;
 }
 /* Set the font, lean the board, position it */
 #board {
@@ -118,7 +119,7 @@ p, a{
 
 /* Set the scrolling animation and position it */
 #content {
-  animation: scroll 100s linear 16s;
+  animation: scroll 100s linear 25s;
   position: absolute;
   top: 100%;
 }
