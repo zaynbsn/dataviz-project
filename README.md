@@ -26,9 +26,9 @@ L'expérience est linéaire, pour éviter que les élèves partent dans des dire
 
 ## technologies utilisées
 
-Technologies web de base: HTML, CSS, JavaScript
-Librairies utilisées : Lottie-js, Smooth-Scrollbar, State-Machine
-Stockage des données: fichier JSON (datasets personnalisés)
+- Technologies web de base: HTML, CSS, JavaScript
+- Librairies utilisées : Lottie-js, Smooth-Scrollbar, State-Machine
+- Stockage des données: fichier JSON (datasets personnalisés)
 
 ## crédits
 
