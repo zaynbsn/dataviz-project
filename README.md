@@ -34,8 +34,8 @@ Stockage des données: fichier JSON (datasets personnalisés)
 
 Site réalisé dans le cadre du projet de 2ème année de bachelor developpeur et designer interactif web, l'Ecole by CCI.
  
-assets: Axel SAGRADO
-animations: Théo LANGLADE
-Conception du site: Nils Boisson
+- assets: Axel SAGRADO
+- animations: Théo LANGLADE
+- Conception du site: Nils Boisson
 
 
